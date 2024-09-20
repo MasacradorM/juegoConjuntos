@@ -21,8 +21,9 @@ button {
     border: solid #E0DBA7;
     color: black;
     font-size: 30px !important;
-    width: 30%;
+    width: 35%;
     height: 25%;
+    margin-top: 10px !important;
 }
 button:hover {
     background-color: #f0edcc;
