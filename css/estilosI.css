@@ -8,21 +8,37 @@ body {
 }
 
 .btn {
+    margin-top: 35px;
     font-size: 1.5em;
     padding: 15px;
     border-radius: 10px;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 160px;
-    height: 60px;
+    width: 200px;
+    height: 70px;
 }
+
 .contenedorBotones{
-    width: 300px;
-    background-color: #ffffff7e;
+    margin-top: -80px;
+    padding: 20px;
+    border: solid 3px black;
+    border-radius: 15px;
+    width: 100%;
+    height: 180%;
+    background-color: #ffffff36;
 }
-.imagenUser{
-    
+.imagen{
+    margin-top: -39%;
 }
+.alegar{
+    margin-left: 20px;
+}
+.con-Imagen{
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
 
 img {
     max-width: 100px !important;
