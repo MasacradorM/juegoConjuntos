@@ -1,0 +1,30 @@
+/* styles.css */
+body {
+    background-image: url('../img/fondoInicioM.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Kaushan Script', cursive;
+}
+
+img {
+  max-width: 350px; /* Ajusta el tamaño según tu imagen */
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 70%;
+  height: 50px;
+  background-color: #0ab6f9;
+  border: 5px solid #000000;
+  border-radius: 160px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 76%;
+}

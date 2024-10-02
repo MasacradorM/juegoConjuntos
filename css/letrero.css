@@ -1,0 +1,25 @@
+body {
+    background-image: url('../img/fondoInicioM.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+   align-items: center;
+    color: #fff;
+}
+  
+  .container {
+    text-align: center;
+    color: white;
+    padding: 50px;
+  }
+  
+  .title {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    font-size: 24px;
+  }
