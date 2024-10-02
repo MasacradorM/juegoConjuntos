@@ -1,0 +1,29 @@
+body {
+    background-image: url('../img/fondo-Inicio.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.btn {
+    font-size: 1.5em;
+    padding: 15px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 160px;
+    height: 60px;
+}
+
+img {
+    max-width: 100px !important;
+}
+
+p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}

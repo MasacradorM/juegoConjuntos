@@ -1,0 +1,36 @@
+body {
+    background-image: url('../img/fondoInicioM.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Kaushan Script', cursive;
+}
+
+.title {
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.btn {
+    margin: 10px;
+    width: 200px;
+    background-color: white; 
+    border: solid 4px antiquewhite;
+    
+}
+ 
+/* Modal */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
