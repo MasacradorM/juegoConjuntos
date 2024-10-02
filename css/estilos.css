@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Kaushan Script';
 }
 
 .title {
@@ -16,15 +16,24 @@ body {
 }
 
 .btn {
+    font-size: 30px !important;
     margin: 10px;
     width: 200px;
     background-color: white; 
-    border: solid 4px antiquewhite;
+    border: solid 4px rgb(255, 200, 138);
     
 }
  
 /* Modal */
+.modal-dialog{
+
+}
+.modal-title{
+    font-size: 40px;
+}
 .modal-content {
+    display: flex !important;
+    border: solid 4px rgb(255, 200, 138);
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
 }
