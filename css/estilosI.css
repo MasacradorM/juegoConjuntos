@@ -3,8 +3,6 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    display: flex;
-    justify-content: center;
    align-items: center;
     color: #fff;
 }
@@ -17,9 +15,13 @@ body {
     background-size: cover;
     width: 160px;
     height: 60px;
-}.contenedorBotones{
+}
+.contenedorBotones{
     width: 300px;
     background-color: #ffffff7e;
+}
+.imagenUser{
+    
 }
 
 img {
