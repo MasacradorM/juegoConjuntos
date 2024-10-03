@@ -1,0 +1,46 @@
+body {
+    background-image: url('../img/fondosolitario.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    overflow: hidden;
+    font-family: 'Kaushan Script', cursive;
+  }
+  .container {
+    background-image: url("../img/pergamino2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 40px;
+    border-radius: 100px;
+    width: 500px;
+    height: 500px;
+    margin-left: 700px;
+  }
+  
+  .text-container {
+    position: absolute;
+    margin-top: 262px;
+    margin-left: 190px;
+    transform: translate(-50%, -50%);
+    width:280px; /* Ajusta el ancho del contenedor de texto */
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+  .start-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 460px;
+    margin-left: 120px;
+  }

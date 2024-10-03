@@ -7,6 +7,8 @@ body {
       display: flex;
       justify-content: center;
       align-items: center; 
+      overflow: hidden;
+      
     }
     .form-container {
         background-image: url("../img/pergamino.PNG");

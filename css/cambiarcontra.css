@@ -1,13 +1,14 @@
 body {
-    font-family: 'Old Standard TT', serif; /* Replace 'Old Standard TT' with the actual font family name */
-      background-image: url('../img/fondologin.png');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center; 
-    }
+  background-image: url('../img/fondologin.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  overflow: hidden;
+  font-family: 'Kaushan Script', cursive;
+}
     .form-container {
         background-image: url("../img/pergamino.PNG");
         background-size: contain;
@@ -81,5 +82,5 @@ img {
     position: absolute;
     margin-top: 85px;
     margin-left: 10px;
-    font-size: 35px;
+    font-size: 33px;
    }
