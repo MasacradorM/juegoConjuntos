@@ -8,11 +8,13 @@ body {
     align-items: center;
 
     font-family: 'Kaushan Script';
+
 }
 
 .title {
     color: #fff;
     margin-bottom: 30px;
+    font-size: 70px;
 }
 
 .btn {
@@ -20,21 +22,24 @@ body {
     margin: 10px;
     width: 200px;
     background-color: white; 
-    border: solid 4px rgb(255, 200, 138);
+    border: solid 4px rgb(255, 213, 166);
     
+}
+
+@media (hover: hover){
+    .btn:hover {
+        background-color: rgb(253, 219, 180);
+    }
 }
  
 /* Modal */
-.modal-dialog{
-
-}
 .modal-title{
     font-size: 40px;
 }
 .modal-content {
     display: flex !important;
     border: solid 4px rgb(255, 200, 138);
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.979);
     border-radius: 10px;
 }
 
