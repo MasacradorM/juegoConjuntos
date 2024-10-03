@@ -69,23 +69,33 @@ p {
     width: 100%;
     height: 100%;
     overflow: auto; /* Habilita el scroll si es necesario */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    background-color: rgba(0, 0, 0, 0.514); /* Fondo semi-transparente */
 }
 
 .modal-content {
+    background-color: #88888800;
     background-image: url('../img/modalUsuario.png');
     background-size: cover;
     background-position: center;
     float: left;
-    margin: 5% ; /* Centrado vertical y horizontal */
+    margin: 2% ; /* Centrado vertical y horizontal */
     padding: 20px;
-    border: 1px solid #888;
-    width: 15%; /* Ancho del modal */
-    height: 50%;
+    border: 1px solid #88888800;
+    width: 19.4%; /* Ancho del modal */
+    height: 60%;
+}
+.perfilUser{
+    float: unset;
+    width: 60%;
+    height: 30%;
+    background-image: url('../img/pirata-Jack.jpeg');
+    background-size: cover;
+    background-position: center;
+    border: solid 1px black;
 }
 
 .close {
-    color: #aaa;
+    color: #aaaaaa00;
     float: right;
     font-size: 28px;
     font-weight: bold;
