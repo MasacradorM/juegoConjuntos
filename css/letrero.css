@@ -9,17 +9,43 @@ body {
     color: #fff;
 }
   
-  .container {
+  .contenedor {
     text-align: center;
-    color: white;
+
     padding: 50px;
   }
   
+  .titulo{
+    padding: 10px;
+    background-image: url('../img/imagenTitulo.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    justify-content: center;
+    width: 60%;
+    height: 150px;
+    margin-left: 20%;
+  }
   .title {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 58px;
+    margin-top: 12px;
+    color: #643500;
+
+  }
+  .texto{
+    padding: 50px;
+    background-image: url('../img/fondo-texto.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    justify-content: center;
+    width: 60%;
+    height: 250px;
+    margin-left: 18%;
   }
   
   .description {
-    font-size: 24px;
+    margin-top: 47px;
+    font-size: 32px;
+    color: rgb(82, 82, 82);
   }
