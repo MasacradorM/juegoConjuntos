@@ -15,7 +15,12 @@ form.addEventListener('submit', (event) => {
 
     // Muestra mensaje de éxito
     alert('Código enviado con éxito.');
-});
+
+    setTimeout(() => {
+        window.location.href = 'codigo.html';
+    }, 100);
+    });
+
 
 function isValidEmail(email) {
     // Puedes usar una expresión regular más compleja para una validación más estricta
