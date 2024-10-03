@@ -1,0 +1,67 @@
+body {
+    background-image: url('../img/puertasfondo.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    overflow: hidden;
+    font-family: 'Kaushan Script', cursive;
+  }
+    
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    margin-top: -500px;
+    margin-left: 26px;
+  }
+  
+  .puerta {
+    width: 210px;
+    height: 400px;
+    background-color: transparent; /* Azul claro */
+    border-radius: 10px;
+    text-align: center;
+    padding: 25px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    margin-top: 80px;
+    margin-left: -800px;
+
+  }
+  
+  .puerta1 {
+    width: 210px;
+    height: 400px;
+    background-color: transparent; /* Azul claro */
+    border-radius: 10px;
+    text-align: center;
+    padding: 25px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    margin-top: 80px;
+
+  }
+  
+  .puerta2 {
+    width: 210px;
+    height: 400px;
+    background-color: transparent; /* Azul claro */
+    border-radius: 10px;
+    text-align: center;
+    padding: 25px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 800px;
+
+  }
+  
+  .puerta p {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
