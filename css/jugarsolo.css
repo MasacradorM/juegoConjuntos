@@ -15,15 +15,15 @@ body {
     background-repeat: no-repeat;
     padding: 40px;
     border-radius: 100px;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     margin-left: 700px;
   }
   
   .text-container {
     position: absolute;
-    margin-top: 262px;
-    margin-left: 190px;
+    margin-top: 282px;
+    margin-left: 200px;
     transform: translate(-50%, -50%);
     width:280px; /* Ajusta el ancho del contenedor de texto */
     text-align: center;
@@ -34,13 +34,34 @@ body {
     text-align: left;
 }
   .start-button {
-    background-color: #3498db;
-    color: #fff;
+    background-image: url("../img/boton.png");
+    background-color: transparent;
     padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     font-size: 18px;
-    margin-top: 460px;
-    margin-left: 120px;
+    margin-top: 480px;
+    margin-left: 110px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: solid 3px transparent;
+    width: 180px;
+    height: 180px;
+    position: absolute;
   }
+
+  .pirata{
+   position: absolute;
+   margin-top: 30px;
+   margin-left: -1100px;
+   width: 50px;
+   height: -40px;
+  }
+  img{
+    width: 460px;
+  }
+
+ .inicio{
+    font-family: 'Kaushan Script', cursive;
+    position: absolute;
+    margin-top: -80px;
+    margin-left: 25px;
+ }
