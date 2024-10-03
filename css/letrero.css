@@ -7,6 +7,7 @@ body {
     justify-content: center;
    align-items: center;
     color: #fff;
+    overflow: hidden;
 }
   
   .contenedor {
@@ -48,4 +49,20 @@ body {
     margin-top: 47px;
     font-size: 32px;
     color: rgb(82, 82, 82);
+  }
+  .boton button {
+    background-color: #774400; /* Verde claro */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .boton button:hover {
+    background-color:#774400; /* Verde más oscuro al pasar el ratón */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
