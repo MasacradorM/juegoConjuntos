@@ -1,68 +1,74 @@
+/* Estilos generales */
 body {
-    background-image: url('../img/pixelcut-export.jpeg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-   align-items: center;
-    color: #fff;
-    overflow: hidden;
+  background-image: url('../img/pixelcut-export.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
 }
-  
-  .contenedor {
-    text-align: center;
 
-    padding: 50px;
-  }
-  
-  .titulo{
-    padding: 10px;
-    background-image: url('../img/imagenTitulo.png');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    justify-content: center;
-    width: 50%;
-    height: 150px;
-    margin-left: 25%;
-  }
-  .title {
-    font-size: 58px;
-    margin-top: 12px;
-    color: #643500;
+/* Contenedor principal */
+.contenedor {
+  text-align: center;
+  padding: 50px;
+  max-width: 800px; /* Ajusta el ancho máximo según tu preferencia */
+}
 
-  }
-  .texto{
-    padding: 50px;
-    background-image: url('../img/fondo-texto.png');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    justify-content: center;
-    width: 50%;
-    height: 250px;
-    margin-left: 22%;
-  }
-  
-  .description {
-    margin-top: 47px;
-    font-size: 32px;
-    color: rgb(82, 82, 82);
-  }
-  .boton button {
-    background-color: #774400; /* Verde claro */
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .boton button:hover {
-    background-color:#774400; /* Verde más oscuro al pasar el ratón */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
+/* Título con imagen */
+.titulo {
+  padding: 10px;
+  background-image: url('../img/imagenTitulo.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: 150px;
+}
+
+.title {
+  font-size: 58px;
+  margin-top: 12px;
+  color: #643500;
+}
+
+/* Texto con imagen de fondo */
+.texto {
+  padding: 50px;
+  background-image: url('../img/fondo-texto.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: 250px;
+}
+
+.description {
+  margin-top: 47px;
+  font-size: 32px;
+  color: rgb(82, 82, 82);
+}
+
+/* Botón */
+.boton button {
+  background-color: #774400;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.boton button:hover {
+  background-color: #774400;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
