@@ -11,4 +11,4 @@ function animateProgressBar() {
   }
 }
 
-const interval = setInterval(animateProgressBar, 60);
+const interval = setInterval(animateProgressBar, 40);

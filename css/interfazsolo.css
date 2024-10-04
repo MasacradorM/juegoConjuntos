@@ -10,58 +10,76 @@ body {
     font-family: 'Kaushan Script', cursive;
   }
     
-  
-  .container {
-    display: flex;
-    justify-content: space-around;
-    position: absolute;
-    margin-top: -500px;
-    margin-left: 26px;
-  }
-  
   .puerta {
-    width: 210px;
-    height: 400px;
-    background-color: transparent; /* Azul claro */
-    border-radius: 10px;
-    text-align: center;
-    padding: 25px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 30px !important;
+    margin: 10px;
+    width: 270px;
+    height: 490px;
+    background-color: transparent; 
     position: absolute;
-    margin-top: 80px;
+    margin-top: 130px;
     margin-left: -800px;
-
-  }
+    
+}
+.puerta1 {
+  font-size: 30px !important;
+  margin: 10px;
+  width: 270px;
+  height: 490px;
+  background-color: transparent; 
+  position: absolute;
+  margin-top: 130px;
+  margin-left: 10px;
   
-  .puerta1 {
-    width: 210px;
-    height: 400px;
-    background-color: transparent; /* Azul claro */
-    border-radius: 10px;
-    text-align: center;
-    padding: 25px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    margin-top: 80px;
+}
 
-  }
+.puerta2 {
+  font-size: 30px !important;
+  margin: 10px;
+  width: 270px;
+  height: 490px;
+  background-color: transparent; 
+  position: absolute;
+  margin-top: 130px;
+  margin-left: 840px;
   
-  .puerta2 {
-    width: 210px;
-    height: 400px;
-    background-color: transparent; /* Azul claro */
-    border-radius: 10px;
-    text-align: center;
-    padding: 25px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    margin-top: 80px;
-    margin-left: 800px;
+}
 
+.titulo1{
+  color: white;
+  font-size: 40px;
+  position: absolute;
+  margin-top: -440px;
+  font-family: 'Kaushan Script';
+}
+.titulo2{
+  color: white;
+  font-size: 40px;
+  position: absolute;
+  margin-top: -440px;
+  margin-left: 800px;
+  font-family: 'Kaushan Script';
+}
+.titulo3{
+  color: white;
+  font-size: 36px;
+  position: absolute;
+  margin-top: -440px;
+  margin-left: -820px;
+  font-family: 'Kaushan Script';
+}
+
+.titulo1, .titulo2, .titulo3 {
+  /* ... (tus estilos existentes) */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  animation: neon 1s infinite alternate;
+}
+
+@keyframes neon {
+  0% {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   }
-  
-  .puerta p {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
+  100% {
+    text-shadow: 3px 3px 5px rgba(255, 0, 0, 1);
   }
+}

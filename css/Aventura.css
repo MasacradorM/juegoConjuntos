@@ -1,0 +1,30 @@
+body {
+    background-image: url('../img/fondoaventura.png');
+    background-size: cover;
+    background-position: center;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    overflow: hidden;
+    font-family: 'Kaushan Script', cursive;
+  }
+  img{
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    margin-left: 200px;
+  }
+  .letra{
+    position: absolute;
+    margin-top: 320px;
+    margin-left: 520px;
+    transform: translate(-50%, -50%);
+    width:280px; /* Ajusta el ancho del contenedor de texto */
+    text-align: center;
+    color: black;
+    font-size: 36px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+  }
