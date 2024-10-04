@@ -1,6 +1,5 @@
-/* styles.css */
 body {
-    background-image: url('../img/fondoInicioM.jpeg');
+    background-image: url('../img/pixelcut-export.jpeg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -26,5 +25,5 @@ img {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  top: 76%;
+  top: 71%;
 }

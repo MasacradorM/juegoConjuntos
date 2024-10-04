@@ -1,5 +1,5 @@
 body {
-    background-image: url('../img/fondoInicioM.jpeg');
+    background-image: url('../img/pixelcut-export.jpeg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -8,7 +8,6 @@ body {
     align-items: center;
     overflow: hidden;
     font-family: 'Kaushan Script';
-
 }
 
 .title {
@@ -32,7 +31,6 @@ body {
     }
 }
  
-/* Modal */
 .modal-title{
     font-size: 40px;
 }
@@ -47,4 +45,12 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+}
+
+.soundd{
+    margin-right: 4px;
+}
+
+.musicc{
+    margin-right: 4px;
 }
