@@ -5,13 +5,22 @@ const texts = [
     "Quizá necesitaremos hablar con los lugareños",
     "El mapa podría tener pistas ocultas"
   ];
-
+  
   let currentTextIndex = 0;
-
+  let intervalId;
+  
   function changeText() {
     const textElement = document.getElementById("text");
     textElement.textContent = texts[currentTextIndex];
-    currentTextIndex = (currentTextIndex + 1) % texts.length;
+    currentTextIndex++;
+  
+    // Detener la animación al llegar a la última frase
+    if (currentTextIndex >= texts.length) {
+      clearInterval(intervalId);
+    }
   }
-
-  setInterval(changeText, 2000); 
+  
+  // Iniciar la animación automáticamente al cargar la página
+  window.onload = function() {
+    intervalId = setInterval(changeText, 2000);
+  };
