@@ -1,5 +1,5 @@
 body {
-    background-image: url('../img/fondoInicioM.jpeg');
+    background-image: url('../img/pixelcut-export.jpeg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -23,9 +23,9 @@ body {
     background-position: center;
     text-align: center;
     justify-content: center;
-    width: 60%;
+    width: 50%;
     height: 150px;
-    margin-left: 20%;
+    margin-left: 25%;
   }
   .title {
     font-size: 58px;
@@ -40,9 +40,9 @@ body {
     background-position: center;
     text-align: center;
     justify-content: center;
-    width: 60%;
+    width: 50%;
     height: 250px;
-    margin-left: 18%;
+    margin-left: 22%;
   }
   
   .description {
