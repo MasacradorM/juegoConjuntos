@@ -16,10 +16,10 @@ body {
    background-position: center;
    text-align: center;
    justify-content: center;
-   margin-top: 250px;
+   margin-top: 280px;
    margin-left: 820px;
-   width: 400px;
-    height: 460px;
+   width: 380px;
+    height: 400px;
    position: absolute;
   }
   .pirata1{
@@ -98,4 +98,72 @@ body {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.personaje {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.health-barp {
+    width: 200px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 100px;
+    margin-top: -100px;
+    margin-left: 300px;
+  position: absolute;
+  
+ 
+}
+.health-barj {
+  width: 200px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 100px;
+  margin-top: -100px;
+  margin-left: -420px;
+ position: absolute;
+
+}
+
+.health-fill {
+    width: 100%;
+    height: 100%;
+    background-color: #4CAF50;
+    transition: width 0.3s ease;
+    
+}
+
+.health-textj {
+    font-weight: bold;
+    position: absolute;
+    margin-top: -130px;
+  margin-left: -340px;
+  background-color: #efeded;
+  border-radius: 5px;
+}
+
+.health-textp {
+  font-weight: bold;
+  position: absolute;
+  margin-top: -130px;
+ margin-left: 380px;
+ background-color: #efeded;
+ border-radius: 5px;
+}
+
+
+.jefe .health-fill {
+    background-color: #f44336; /* Color rojo para el jefe */
+    
+    
+}
+
+.pirata .health-fill {
+    background-color: #2196F3; /* Color azul para el pirata */
 }
