@@ -59,7 +59,7 @@ body {
 }
 .modal {
   display: none; /* Oculto por defecto */
-  position: fixed; /* Fijo en la pantalla */
+  position: absolute; /* Fijo en la pantalla */
   z-index: 1; /* Por encima de otros elementos */
   left: 0;
   top: 0;
@@ -67,6 +67,7 @@ body {
   height: 100%;
   overflow: auto; /* Habilita el scroll si es necesario */
   background-color: rgba(0, 0, 0, 0.514); /* Fondo semi-transparente */
+  
 }
 
 
@@ -80,6 +81,9 @@ body {
   width: 80%;
   max-height: 80vh; 
   overflow-y: auto; 
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 120px;
 }
 
 .close {
