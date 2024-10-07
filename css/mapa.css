@@ -1,0 +1,94 @@
+body {
+    background-image: url('../img/FondojuegoAventura.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    overflow: hidden;
+    font-family: 'Kaushan Script', cursive;
+  }
+
+ .imagen1{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 420px;
+  }
+  .imagen2{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 300px;
+  }
+  
+  .imagen3{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 200px;
+  }
+  
+  .imagen4{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: -90px;
+    margin-left: 80px;
+  }
+  
+  .imagen5{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: -50px;
+  }
+  
+  .imagen6{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left:-180px;
+  }
+  .imagen7{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: -30px;
+    margin-left:-300px;
+  }
+  .imagen8{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: -110px;
+    margin-left:-420px;
+  }
+  .imagen9{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: -240px;
+    margin-left: -330px;
+  }
+  .imagen10{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: -330px;
+    margin-left: -250px;
+  }
+  .imagen11{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-top: -360px;
+    margin-left: -120px;
+  }
+  
