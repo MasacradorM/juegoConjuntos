@@ -7,15 +7,14 @@
     <title>Nivel 1</title>
 </head>
 <body>
-    <div class="jefe1"></div>
-    <div class="pirata1"></div>
+    <div class="jefe1" id="jefe"></div>
+    <div class="pirata1" id="pirata"></div>
     <div class="personaje jefe">
         <div class="health-barj">
             <div class="health-fill" id="jefe-health"></div>
         </div>
         <p class="health-textj" id="jefe-health-text">100%</p>
     </div>
-
     <div class="personaje pirata">
         <div class="health-barp">
             <div class="health-fill" id="pirata-health"></div>
@@ -23,8 +22,8 @@
         <p class="health-textp" id="pirata-health-text">100%</p>
     </div>
 
-    <button class="habilidad" onclick="openModal(1)">Habilidad 1</button>
-    <button class="habilidad1" onclick="openModal(2)">Habilidad 2</button>
+    <button class="habilidad" onclick="openModal(1)">Golpe simple</button>
+    <button class="habilidad1" onclick="openModal(2)">Golpe de poder</button>
 
     <!-- Modal -->
     <div id="myModal" class="modal">
@@ -44,6 +43,15 @@
                 <button type="button" onclick="checkAnswer()">Enviar Respuesta</button>
             </form>
             <p id="result"></p>
+        </div>
+    </div>
+
+    <!-- Pantalla de ataque -->
+    <div id="attackScreen" class="modal">
+        <div class="modal-content">
+            <h2 id="attack-title"></h2>
+            <p id="attack-message"></p>
+            <button onclick="closeAttackScreen()">Continuar</button>
         </div>
     </div>
 

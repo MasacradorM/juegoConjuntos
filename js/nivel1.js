@@ -62,23 +62,57 @@ function checkAnswer() {
         return;
     }
 
-    if (selectedAnswer.value === currentHabilidad.correctAnswer) {
+    let isCorrect = selectedAnswer.value === currentHabilidad.correctAnswer;
+    let damage = isCorrect ? currentHabilidad.correctDamage : currentHabilidad.incorrectDamage;
+
+    if (isCorrect) {
+        playerHealth = Math.max(0, bossHealth - damage);
         resultElement.textContent = "¡Correcto!";
-      playerHealth -= currentHabilidad.correctDamage; // Daño al jefe
     } else {
+        bossHealth= Math.max(0, playerHealth - damage);
         resultElement.textContent = `Incorrecto. La respuesta correcta era: ${currentHabilidad.answers[currentHabilidad.correctAnswer]}`;
-      bossHealth-= currentHabilidad.incorrectDamage; // Daño al jugador
     }
 
     updateHealthBars();
     closeModal();
+    showAttackScreen(isCorrect, damage);
 
-    if (playerHealth <= 0) {
-        alert("¡Has derrotado al jefe!");
-    } else if (bossHealth <= 0) {
-        alert("Has sido derrotado por el jefe.");
+    if (bossHealth <= 0) {
+        setTimeout(() => alert("¡Has derrotado al jefe!"), 1000);
+    } else if (playerHealth <= 0) {
+        setTimeout(() => alert("Has sido derrotado por el jefe."), 1000);
     }
+}
+
+function showAttackScreen(isCorrect, damage) {
+    const attackScreen = document.getElementById('attackScreen');
+    const attackTitle = document.getElementById('attack-title');
+    const attackMessage = document.getElementById('attack-message');
+
+    if (isCorrect) {
+        attackTitle.textContent = '¡Ataque Exitoso!';
+        attackMessage.textContent = `Atacaste al Jefe y le quitaste ${damage} puntos de vida.`;
+    } else {
+        attackTitle.textContent = '¡Ataque Fallido!';
+        attackMessage.textContent = `Perdiste ${damage} puntos de vida.`;
+    }
+
+    attackScreen.style.display = 'block';
+}
+
+function closeAttackScreen() {
+    document.getElementById('attackScreen').style.display = 'none';
 }
 
 // Inicializar las barras de salud al cargar la página
 updateHealthBars();
+
+// Event Listeners
+window.onclick = function(event) {
+    if (event.target == document.getElementById('myModal')) {
+        closeModal();
+    }
+    if (event.target == document.getElementById('attackScreen')) {
+        closeAttackScreen();
+    }
+}
