@@ -7,6 +7,7 @@
     <title>Nivel 1</title>
 </head>
 <body>
+    <div id="timer" class="timer">05:00</div> <!-- Contador de 5 minutos -->
     <div class="jefe1" id="jefe"></div>
     <div class="pirata1" id="pirata"></div>
     <div class="personaje jefe">
@@ -54,7 +55,20 @@
             <button onclick="closeAttackScreen()">Continuar</button>
         </div>
     </div>
+    <button class="cambiar-personaje" onclick="openCharacterModal()">Cambiar Personaje</button>
 
+    <!-- Modal para cambiar el personaje -->
+    <div id="characterModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCharacterModal()">&times;</span>
+            <h2>Seleccionar Personaje</h2>
+            <div id="character-options">
+                <img src="img/jack.png"Pirata 1" onclick="selectCharacter('pirata1')">
+                <img src="img/jack.png" alt="Pirata 2" onclick="selectCharacter('pirata2')">
+                <img src="img/jack.png" alt="Pirata 3" onclick="selectCharacter('pirata3')">
+            </div>
+        </div>
+    </div>
     <script src="js/nivel1.js"></script>
     <script src="js/modalhabilidad1.js"></script>
 </body>
