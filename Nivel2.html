@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Nivel2.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="game-container">
+        <img id="player-ship" class="ship" src="/api/placeholder/200/200" alt="Player Ship">
+        <img id="enemy-ship" class="ship" src="/api/placeholder/200/200" alt="Enemy Ship">
+        <div id="player-hp-bar" class="hp-bar">
+            <div id="player-hp-fill" class="hp-fill" style="width: 100%;"></div>
+        </div>
+        <div id="enemy-hp-bar" class="hp-bar">
+            <div id="enemy-hp-fill" class="hp-fill" style="width: 100%;"></div>
+        </div>
+        <div id="battle-menu">
+            <div id="battle-log"></div>
+            <div id="battle-options">
+                <button class="battle-button" onclick="playerAttack()">ATTACK</button>
+                <button class="battle-button" onclick="playerHeal()">HEAL</button>
+                <button class="battle-button" onclick="playerDefend()">DEFEND</button>
+                <button class="battle-button" onclick="playerFlee()">FLEE</button>
+            </div>
+        </div>
+    </div>
+    <div id="game-over">
+        <div id="game-over-content">
+            <h2 id="game-over-message"></h2>
+            <button id="play-again-btn">Play Again</button>
+        </div>
+    </div>
+    <script src="js/Nivel2.js"></script>
+</body>
+</html>
