@@ -76,6 +76,7 @@ p {
     height: 100%;
     overflow: auto; /* Habilita el scroll si es necesario */
     background-color: rgba(0, 0, 0, 0.514); /* Fondo semi-transparente */
+
 }
 
 .modal-content {
@@ -89,6 +90,9 @@ p {
     border: 1px solid #88888800;
     width: 19.4%; /* Ancho del modal */
     height: 60%;
+    font-family: 'Irish Grover';
+    color: black;
+    text-align: center;
 }
 .perfilUser{
     margin-top: -3%;
@@ -99,6 +103,30 @@ p {
     background-size: cover;
     background-position: center;
     border: solid 2px black;
+}
+.barraNivel{
+    border-radius: 10px;
+    border: solid black;
+    width: 70%;
+    height: 6%;
+    margin-left: 14%;
+}
+.avance{
+    width: 70%;
+    height: 100%;
+    background-color: aqua;
+    border-radius: 10px;
+
+}
+.cerrar-sesion{
+    background-color: #88888800;
+    background-image: url('../img/boton.png');
+    background-size: cover;
+    background-position: center;
+    width: 64%;
+    height: 10%;
+    margin-left: 16%;
+    border: solid #88888800;
 }
 
 .close {
