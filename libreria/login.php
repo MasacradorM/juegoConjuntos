@@ -1,5 +1,6 @@
 <?php
 
+include ('baseDatos.php');
 class User {
     private $conn;
     private $table_name = "users";
@@ -51,8 +52,6 @@ class User {
 session_start();
 header("Content-Type: application/json");
 
-include_once 'database.php';
-include_once 'user.php';
 
 $database = new Database();
 $db = $database->getConnection();
