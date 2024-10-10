@@ -68,6 +68,8 @@ class Database {
     {
         $this->conexion = null; // Destruir la conexión
     }
+
+
 }
 
 // Uso de la clase
