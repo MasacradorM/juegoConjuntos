@@ -1,59 +1,80 @@
 <?php
 
 class Database {
-    private $host;
-    private $dbname;
-    private $user;
+    private static $instance = null; // Instancia Singleton
+    private $dsn;
+    private $server;
+    private $usuario;
+    private $baseDatos;
     private $password;
-    private $pdo;
+    private $conexion;
 
-    public function __construct($host, $dbname, $user, $password) {
-        $this->host = $host;
-        $this->dbname = $dbname;
-        $this->user = $user;
-        $this->password = $password;
-        $this->connect();
+    private function __construct()
+    {
+        // Utiliza variables de entorno para las credenciales
+        $this->server = getenv('DB_SERVER') ?: "localhost";
+        $this->usuario = getenv('DB_USER') ?: "postgres";
+        $this->baseDatos = getenv('DB_NAME') ?: "juegoConjuntos";
+        $this->password = getenv('DB_PASS') ?: "1077225941"; // Considera cambiar a una variable de entorno
+        $this->conexion = $this->conectar(); // Establecer la conexión al crear el objeto
     }
 
-    private function connect() {
+    // Método para obtener la instancia de la clase (Singleton)
+    public static function getInstance()
+    {
+        if (self::$instance == null) {
+            self::$instance = new Database();
+        }
+        return self::$instance;
+    }
+
+    public function conectar()
+    {
+        $this->dsn = 'pgsql:host=' . $this->server . ';port=5432;dbname=' . $this->baseDatos;
         try {
-            $dsn = "pgsql:host={$this->host};dbname={$this->dbname}";
-            $this->pdo = new PDO($dsn, $this->user, $this->password);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Conexión exitosa a la base de datos.";
+            $conecto = new PDO($this->dsn, $this->usuario, $this->password);
+            $conecto->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $conecto; // Retorna la conexión
         } catch (PDOException $e) {
-            echo "Error en la conexión: " . $e->getMessage();
+            // Manejar error de conexión (considera registrar en lugar de mostrar)
+            error_log("Error de conexión: " . $e->getMessage()); // Registrar el error
+            return null; // Retorna null si no se conectó
         }
     }
 
-    public function getConnection() {
-        return $this->pdo;
+    // Método para ejecutar consultas sin retorno de valores
+    public function ejecutar($sqlQuery, $values = [])
+    {
+        if ($this->conexion) {
+            $consulta = $this->conexion->prepare($sqlQuery);
+            $consulta->execute($values);
+            return $consulta->rowCount(); // Devuelve el número de filas afectadas
+        }
+        return false; // Retorna false si no hay conexión
     }
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-    
-        $stmt = $pdo->prepare('SELECT * FROM usuarios WHERE username = :username');
-        $stmt->execute(['username' => $username]);
-        $user = $stmt->fetch();
-    
-        if ($user && password_verify($password, $user['password'])) {
-            echo 'Login exitoso';
+    // Método para verificar la conexión
+    public function verificarConexion()
+    {
+        if ($this->conexion) {
+            echo "Conexión exitosa a la base de datos."; // Mensaje de conexión exitosa
         } else {
-            echo 'Usuario o contraseña incorrectos';
+            echo "No se pudo establecer la conexión."; // Mensaje de error de conexión
         }
     }
 
+    // Método para cerrar la conexión (opcional)
+    public function cerrar()
+    {
+        $this->conexion = null; // Destruir la conexión
+    }
 }
 
-// Uso de la clase Database
-$host = 'localhost'; // Cambia esto según tu configuración
-$dbname = 'juego';
-$user = 'postgre';
-$password = "";
+// Uso de la clase
+$db = Database::getInstance();
+$db->verificarConexion(); // Verificar conexión
 
-$db = new Database($host, $dbname, $user, $password);
-$connection = $db->getConnection();
+
+
 
 ?>
