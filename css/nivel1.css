@@ -12,6 +12,7 @@ body {
   overflow: hidden;
   font-family: 'Press Start 2P', cursive; /* Fuente estilo pixel art */
   color: #FFD700; /* Texto dorado para contraste */
+  cursor: url('../img/cursor.PNG'), auto;
 }
 
 /* Estilos para Jefe y Pirata */

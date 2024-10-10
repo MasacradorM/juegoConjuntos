@@ -8,6 +8,7 @@ body {
     align-items: center;
     overflow: hidden;
     font-family: 'Kaushan Script';
+    cursor: url('../img/cursor.PNG'), auto;
 }
 
 .title {

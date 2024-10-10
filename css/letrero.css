@@ -9,6 +9,7 @@ body {
   align-items: center;
   color: #fff;
   overflow: hidden;
+  cursor: url('../img/cursor.PNG'), auto;
 }
 
 /* Contenedor principal */

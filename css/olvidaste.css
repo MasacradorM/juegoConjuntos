@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    cursor: url('../img/cursor.PNG'), auto;
 }
 
 .form-container {
