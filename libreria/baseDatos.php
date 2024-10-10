@@ -1,47 +1,80 @@
 <?php
 
 class Database {
-    private $host;
-    private $dbname;
-    private $user;
+    private static $instance = null; // Instancia Singleton
+    private $dsn;
+    private $server;
+    private $usuario;
+    private $baseDatos;
     private $password;
-    private $port;
-    private $pdo;
+    private $conexion;
 
-    // Constructor
-    public function __construct() {
-        $this->host = "localhost";
-        $this->dbname = "juegoConjuntos";  // Nombre correcto de la base de datos
-        $this->user = "postgres";          // Usuario de PostgreSQL
-        $this->password = "1077225941";    // Contraseña del usuario de PostgreSQL
-        $this->port = "5432";              // Puerto de PostgreSQL (5432 por defecto)
-        $this->connect();
+    private function __construct()
+    {
+        // Utiliza variables de entorno para las credenciales
+        $this->server = getenv('DB_SERVER') ?: "localhost";
+        $this->usuario = getenv('DB_USER') ?: "postgres";
+        $this->baseDatos = getenv('DB_NAME') ?: "juegoConjuntos";
+        $this->password = getenv('DB_PASS') ?: "1077225941"; // Considera cambiar a una variable de entorno
+        $this->conexion = $this->conectar(); // Establecer la conexión al crear el objeto
     }
 
-    // Método para realizar la conexión a la base de datos
-    private function connect() {
+    // Método para obtener la instancia de la clase (Singleton)
+    public static function getInstance()
+    {
+        if (self::$instance == null) {
+            self::$instance = new Database();
+        }
+        return self::$instance;
+    }
+
+    public function conectar()
+    {
+        $this->dsn = 'pgsql:host=' . $this->server . ';port=5432;dbname=' . $this->baseDatos;
         try {
-            // Formato del DSN para PostgreSQL
-            $dsn = "pgsql:host={$this->host};port={$this->port};dbname={$this->dbname}";
-            
-            // Crear una nueva instancia de PDO para la conexión
-            $this->pdo = new PDO($dsn, $this->user, $this->password);
-            
-            // Configurar el manejo de errores para que arroje excepciones
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
-            // Mensaje de éxito
-            echo "Conexión exitosa a la base de datos.<br>";
+            $conecto = new PDO($this->dsn, $this->usuario, $this->password);
+            $conecto->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $conecto; // Retorna la conexión
         } catch (PDOException $e) {
-            // Mensaje en caso de error
-            echo "Error en la conexión: " . $e->getMessage() . "<br>";
+            // Manejar error de conexión (considera registrar en lugar de mostrar)
+            error_log("Error de conexión: " . $e->getMessage()); // Registrar el error
+            return null; // Retorna null si no se conectó
         }
     }
 
-    // Método para obtener la conexión activa (PDO)
-    public function getConnection() {
-        return $this->pdo;
+    // Método para ejecutar consultas sin retorno de valores
+    public function ejecutar($sqlQuery, $values = [])
+    {
+        if ($this->conexion) {
+            $consulta = $this->conexion->prepare($sqlQuery);
+            $consulta->execute($values);
+            return $consulta->rowCount(); // Devuelve el número de filas afectadas
+        }
+        return false; // Retorna false si no hay conexión
+    }
+
+    // Método para verificar la conexión
+    public function verificarConexion()
+    {
+        if ($this->conexion) {
+            echo "Conexión exitosa a la base de datos."; // Mensaje de conexión exitosa
+        } else {
+            echo "No se pudo establecer la conexión."; // Mensaje de error de conexión
+        }
+    }
+
+    // Método para cerrar la conexión (opcional)
+    public function cerrar()
+    {
+        $this->conexion = null; // Destruir la conexión
     }
 }
+
+// Uso de la clase
+$db = Database::getInstance();
+$db->verificarConexion(); // Verificar conexión
+
+
+
 
 ?>
