@@ -9,15 +9,12 @@
     <!--Tipo de letra-->
     <link href='https://fonts.googleapis.com/css?family=Irish Grover' rel='stylesheet'>
     <!-- Bootstrap CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/estilosI.css">
 </head>
 <body>
     <img id="abrirModal" type="button" src="img/iconoUsuario.png" alt="Pirate Skull" class="imagenUser img-fluid my-3 alegar">
-
-    <img type="button" src="img/ranking.png" alt="Ranking" class="img-fluid contenido-Imagen">
-
 
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -32,14 +29,36 @@
             <h6>Nivel: 3</h6>
             <div class="barraNivel">
                 <div class="avance"></div>
-                <div class="faltante"></div>
             </div>
             <br>
             <button class="cerrar-sesion">Cerrar Sesion</button>
         </div>
     </div>
 
-    <script src="js/modal2.js"></script>
+    <img id="openModalBtn" type="button" src="img/ranking.png" alt="Ranking" class="img-fluid contenido-Imagen">
+
+    <div id="optionsModal" class="modal">
+
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="perfilUser"></div>
+                <h6>Jack</h6>
+    
+                <h6>Nombre- Angel123405</h6>
+    
+                <h6>Correo-angelrl@gmail.com</h6>
+    
+                <h6>Nivel: 3</h6>
+                <div class="barraNivel">
+                    <div class="avance"></div>
+                </div>
+                <br>
+                <button class="cerrar-sesion">Cerrar Sesion</button>
+            </div>
+
+    </div>
+
+
     <img type="button" src="img/store.png" alt="Store" class="img-fluid contenido-Imagen">
     <br>
     <img type="button" src="img/estadisticas.png" alt="Settings" class="img-fluid contenido-Imagen">
@@ -91,7 +110,8 @@
             </div>
         </div>
     </div>
-
+    <script src="js/modal2.js"></script>
+    <script src="js/modal.js"></script>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
