@@ -5,19 +5,22 @@ class Database {
     private $dbname;
     private $user;
     private $password;
+    private $port;
     private $pdo;
 
-    public function __construct($host, $dbname, $user, $password) {
-        $this->host = $host;
-        $this->dbname = $dbname;
-        $this->user = $user;
-        $this->password = $password;
+    public function __construct() {
+        $this->host = "localhost";
+        $this->dbname = "juegoConjuntos";
+        $this->user = "postgres";
+        $this->password = "1077225941";
+        $this->port = "5432";
         $this->connect();
     }
 
     private function connect() {
         try {
-            $dsn = "pgsql:host={$this->host};dbname={$this->dbname}";
+            // Incluir el puerto en el DSN
+            $dsn = "pgsql:host={$this->host};port={$this->port};dbname={$this->dbname}";
             $this->pdo = new PDO($dsn, $this->user, $this->password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo "Conexión exitosa a la base de datos.";
@@ -29,31 +32,6 @@ class Database {
     public function getConnection() {
         return $this->pdo;
     }
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-    
-        $stmt = $pdo->prepare('SELECT * FROM usuarios WHERE username = :username');
-        $stmt->execute(['username' => $username]);
-        $user = $stmt->fetch();
-    
-        if ($user && password_verify($password, $user['password'])) {
-            echo 'Login exitoso';
-        } else {
-            echo 'Usuario o contraseña incorrectos';
-        }
-    }
-
 }
-
-// Uso de la clase Database
-$host = 'localhost'; // Cambia esto según tu configuración
-$dbname = 'juegoConjuntos';
-$user = 'postgre';
-$password = "1077225941";
-
-$db = new Database($host, $dbname, $user, $password);
-$connection = $db->getConnection();
 
 ?>
