@@ -1,13 +1,11 @@
 let bossHealth = 100; // Salud inicial del jefe
-let playerHealth = 300; // Salud inicial del jugador (ahora 100 para cada pirata)
+let playerHealth = 300; // Salud inicial de cada pirata (100 por pirata)
 let currentHabilidad = null;
-let accumulatedDamage = 0; // Variable para acumular el daño
 
-// Array de piratas con sus nombres
 let pirates = [
-    { name: 'pirata1' },
-    { name: 'pirata2' },
-    { name: 'pirata3' }
+    { name: 'pirata1', health: 100 },
+    { name: 'pirata2', health: 100 },
+    { name: 'pirata3', health: 100 }
 ];
 let currentPirateIndex = 0;
 
@@ -41,15 +39,13 @@ const questions = {
 };
 
 function updateHealthBars() {
-    // Actualiza la visualización de las barras de salud
     document.getElementById('pirata-health-text').textContent = playerHealth + '%';
     document.getElementById('jefe-health-text').textContent = bossHealth + '%';
-    document.getElementById('pirata-health').style.width = playerHealth + '%'; // Ahora es directo, ya que playerHealth va de 0 a 100
+    document.getElementById('pirata-health').style.width = playerHealth + '%';
     document.getElementById('jefe-health').style.width = bossHealth + '%';
 }
 
 function openModal(habilidad) {
-    // Abre el modal para mostrar la pregunta
     currentHabilidad = questions[habilidad];
     document.getElementById('modal-title').textContent = currentHabilidad.title;
     document.getElementById('modal-question').textContent = currentHabilidad.question;
@@ -61,7 +57,6 @@ function openModal(habilidad) {
 }
 
 function closeModal() {
-    // Cierra el modal
     document.getElementById('myModal').style.display = 'none';
 }
 
@@ -78,13 +73,13 @@ function checkAnswer() {
     let damage = isCorrect ? currentHabilidad.correctDamage : currentHabilidad.incorrectDamage;
 
     if (isCorrect) {
-        // El jugador ataca al jefe
-       playerHealth = Math.max(0, playerHealth - damage);
+        // El jefe recibe daño
+      playerHealth= Math.max(0, playerHealth- damage);
         resultElement.textContent = "¡Correcto!";
     } else {
-        // El jefe ataca al jugador
-        bossHealth = Math.max(0, bossHealth - damage);
-        resultElement.textContent = `Incorrecto. La respuesta correcta era: ${currentHabilidad.answers[currentHabilidad.correctAnswer]}`;
+        // El jugador recibe daño
+     bossHealth= Math.max(0,bossHealth- damage);
+        resultElement.textContent = "¡Incorrecto!";
     }
 
     updateHealthBars();
@@ -93,30 +88,36 @@ function checkAnswer() {
 
     // Verificar si alguien ha ganado o si el pirata actual ha muerto
     if (playerHealth <= 0) {
-        setTimeout(() => alert("¡Has derrotado al jefe!"), 1000);
+        setTimeout(() => {
+            alert("¡Has sido derrotado! Fin del juego.");
+            handleGameOver();
+        }, 1000);
     } else if (bossHealth <= 0) {
         switchToNextPirate();
     }
 }
 
-// Función modificada para cambiar al siguiente pirata con vida completa
 function switchToNextPirate() {
     currentPirateIndex++;
     if (currentPirateIndex < pirates.length) {
         // Cambiar al siguiente pirata
         const nextPirate = pirates[currentPirateIndex];
-        bossHealth = 100; // Reiniciar la salud a 100%
-        updateHealthBars();
+
+        // Restablecer la salud del jugador a 100
+        bossHealth = 100; 
+        updateHealthBars(); // Actualizar las barras de salud
+        bossHealth= nextPirate.health; 
         // Cambiar la apariencia del pirata
         const pirataDiv = document.getElementById("pirata");
         pirataDiv.classList.remove('pirata1', 'pirata2', 'pirata3');
         pirataDiv.classList.add(nextPirate.name);
+        
         alert(`¡${pirates[currentPirateIndex - 1].name} ha caído! ${nextPirate.name} entra en batalla con toda su energía.`);
     } else {
         // Todos los piratas han muerto
         setTimeout(() => {
             alert("Fin del juego. Todos los piratas han sido derrotados.");
-            // Aquí puedes añadir lógica adicional para reiniciar el juego o volver al menú principal
+            handleGameOver();
         }, 1000);
     }
 }
@@ -141,20 +142,6 @@ function closeAttackScreen() {
     document.getElementById('attackScreen').style.display = 'none';
 }
 
-// Inicializar las barras de salud al cargar la página
-updateHealthBars();
-
-// Event Listeners
-window.onclick = function(event) {
-    if (event.target == document.getElementById('myModal')) {
-        closeModal();
-    }
-    if (event.target == document.getElementById('attackScreen')) {
-        closeAttackScreen();
-    }
-}
-
-// Funciones para la selección de personaje (sin cambios)
 function openCharacterModal() {
     document.getElementById("characterModal").style.display = "block";
 }
@@ -193,15 +180,24 @@ function startTimer() {
     }, 1000); // Actualiza cada segundo
 }
 
-// Función para manejar el final del juego
 function handleGameOver() {
-    if (bossHealth > 0) {
-        alert("¡Se acabó el tiempo! Has perdido el juego.");
-    } else {
-        alert("¡Se acabó el tiempo! ¡Has ganado!");
-    }
-    // Aquí puedes agregar más lógica para reiniciar el juego o redirigir al jugador
+    // Reiniciar el juego o redirigir al jugador
+    alert("¡Se acabó el tiempo! Fin del juego.");
+    // Aquí puedes agregar lógica adicional para reiniciar el juego o volver al menú principal
 }
 
 // Iniciar el contador cuando la página se carga
 window.onload = startTimer;
+
+// Inicializar las barras de salud al cargar la página
+updateHealthBars();
+
+// Event Listeners
+window.onclick = function(event) {
+    if (event.target == document.getElementById('myModal')) {
+        closeModal();
+    }
+    if (event.target == document.getElementById('attackScreen')) {
+        closeAttackScreen();
+    }
+};

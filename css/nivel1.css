@@ -15,17 +15,20 @@ body {
 }
 
 /* Estilos para Jefe y Pirata */
-.jefe1, .pirata1 {
-  padding: 20px;
-  background-size: contain;
-  background-repeat: no-repeat;
+.jefe1, .pirata1, .pirata2, .pirata3 {
+  width: 350px;
+  height: 400px;
   background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
   text-align: center;
   position: absolute;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.7); /* Resplandor dorado */
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
   border-radius: 15px;
   transition: all 0.3s ease;
-  animation: float 3s ease-in-out infinite; /* Animación de flotación */
+  animation: float 3s ease-in-out infinite;
+  image-rendering: pixelated;
+  top: 20%;
 }
 
 @keyframes float {
@@ -39,12 +42,20 @@ body {
   box-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
 }
 
-.jefe1, .pirata1 {
+.jefe1, .pirata1, .pirata2, .pirata3x{
   top: 20%;
   width: 350px;
   height: 400px;
   background-size: cover; /* Esto asegura que la imagen ocupe todo el espacio */
   background-position: center; /* Centra la imagen */
+
+}
+.pirata2{
+  width: 350px;
+  height: 400px;
+  background-size: cover; /* Esto asegura que la imagen ocupe todo el espacio */
+  background-position: center; /* Centra la imagen */
+
 }
 
 .jefe1 {
@@ -177,7 +188,7 @@ button.habilidad:hover, button.habilidad1:hover {
 }
 
 /* Efecto de píxeles para imágenes */
-.jefe1, .pirata1 {
+.jefe1, .pirata1, .pirata2, .pirata3 {
   image-rendering: pixelated;
 }
 /* Animación de ataque */
@@ -268,25 +279,35 @@ button.habilidad:hover, button.habilidad1:hover {
   margin: 10px;
   cursor: pointer;
 }
+.jefe1 {
+  right: 10%;
+  background-image: url('../img/capitan1.png');
+  background-size: cover; /* Mantener el tamaño de la imagen del jefe */
+}
+
 .pirata1 {
+  left: 10%;
   background-image: url('../img/jack.png');
-  width: 350px;
-  height: 400px;
-  /* Otros estilos */
+  background-size: cover; /* Mantener el tamaño de la imagen del Pirata 1 */
+}
+
+.pirata2, .pirata3 {
+  left: 10%;
+  background-size: contain; /* Evitar que las imágenes de Pirata 2 y 3 se recorten */
 }
 
 .pirata2 {
-  background-image: url('../img/pirata2.png');
-  width: 350px;
-  height: 400px;
-  /* Otros estilos */
+  background-image: url('../img/pirato.png');
 }
 
 .pirata3 {
-  background-image: url('../img/pirata3.png');
-  width: 350px;
-  height: 400px;
-  /* Otros estilos */
+  background-image: url('../img/mujer.png');
+}
+
+/* Hover effect */
+.jefe1:hover, .pirata1:hover, .pirata2:hover, .pirata3:hover {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
 }
 button.cambiar-personaje {
   padding: 15px 30px;
