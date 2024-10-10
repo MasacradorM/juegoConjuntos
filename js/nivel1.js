@@ -89,7 +89,7 @@ function checkAnswer() {
     // Verificar si alguien ha ganado o si el pirata actual ha muerto
     if (playerHealth <= 0) {
         setTimeout(() => {
-            alert("¡Has sido derrotado! Fin del juego.");
+            alert("¡Has derrotado al jefe! Felicidades.");
             handleGameOver();
         }, 1000);
     } else if (bossHealth <= 0) {
