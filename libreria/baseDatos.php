@@ -49,9 +49,9 @@ class Database {
 
 // Uso de la clase Database
 $host = 'localhost'; // Cambia esto según tu configuración
-$dbname = 'juego';
+$dbname = 'juegoConjuntos';
 $user = 'postgre';
-$password = "";
+$password = "1077225941";
 
 $db = new Database($host, $dbname, $user, $password);
 $connection = $db->getConnection();
