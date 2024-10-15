@@ -1,10 +1,10 @@
 <?php
 
 include ('baseDatos.php');
+
 class User {
     private $conn;
-    private $table_name = "users";
-
+    private $table_name = "loginSystem";
     public $id;
     public $username;
     public $password;
@@ -15,7 +15,7 @@ class User {
     }
 
     public function login() {
-        $query = "SELECT loginSystemId, loginUsuario, contrasena, emailId 
+        $query = "SELECT loginSystemId, loginUsuario, contraseña, emailId 
                   FROM " . $this->table_name . " 
                   WHERE loginUsuario = :username";
 
@@ -25,7 +25,7 @@ class User {
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($row && $this->password === $row['contrasena']) {
+        if ($row && $this->password === $row['contraseña']) {
             $this->id = $row['loginSystemId'];
             $this->email = $row['emailId'];
             return true;
