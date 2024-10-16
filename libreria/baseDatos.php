@@ -1,7 +1,7 @@
 <?php
 
 class Database {
-    private static $instance = null; // Instancia Singleton
+    private static $instance = null;
     private $dsn;
     private $server;
     private $usuario;
@@ -11,11 +11,10 @@ class Database {
 
     private function __construct()
     {
-        // Utiliza variables de entorno para las credenciales
         $this->server = getenv('DB_SERVER') ?: "localhost";
         $this->usuario = getenv('DB_USER') ?: "postgres";
         $this->baseDatos = getenv('DB_NAME') ?: "juegoConjuntos";
-        $this->password = getenv('DB_PASS') ?: "1077225941"; // Considera cambiar a una variable de entorno
+        $this->password = getenv('DB_PASS') ?: "123456"; // Considera cambiar a una variable de entorno
         $this->conexion = $this->conectar(); // Establecer la conexión al crear el objeto
     }
 
@@ -36,7 +35,7 @@ class Database {
             $conecto->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conecto; // Retorna la conexión
         } catch (PDOException $e) {
-            // Manejar error de conexión (considera registrar en lugar de mostrar)
+
             error_log("Error de conexión: " . $e->getMessage()); // Registrar el error
             return null; // Retorna null si no se conectó
         }
@@ -75,8 +74,5 @@ class Database {
 // Uso de la clase
 $db = Database::getInstance();
 $db->verificarConexion(); // Verificar conexión
-
-
-
 
 ?>
