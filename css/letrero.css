@@ -29,11 +29,12 @@ body {
   justify-content: center;
   width: 100%; /* Ocupa todo el ancho disponible */
   height: 150px;
+  margin-left: 0px;
 }
 
 .title {
   font-size: 58px;
-  margin-top: 12px;
+  margin-top: 20px;
   color: #643500;
 }
 
@@ -47,6 +48,7 @@ body {
   justify-content: center;
   width: 100%; /* Ocupa todo el ancho disponible */
   height: 250px;
+  margin-left: -40px;
 }
 
 .description {
