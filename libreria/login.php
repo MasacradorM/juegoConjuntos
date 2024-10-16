@@ -1,75 +1,76 @@
 <?php
 
-include ('baseDatos.php');
+include('conexion.php');
 
-class User {
-    private $conn;
-    private $table_name = "loginSystem";
-    public $id;
-    public $username;
-    public $password;
-    public $email;
+function validarUsuario($email, $password) {
+    $db = Database::getInstance();
+    $conn = $db->getConexion();
 
-    public function __construct($db) {
-        $this->conn = $db;
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE correo_electronico = ?");
+    $stmt->execute([$email]);
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($usuario && password_verify($password, $usuario['contrasena'])) {
+        return $usuario; // Usuario encontrado y contraseña correcta
+    }
+    return false; // Usuario no encontrado o contraseña incorrecta
+}
+
+// Función para registrar un nuevo usuario
+function registrarUsuario($email, $password, $nombre) {
+    $db = Database::getInstance();
+    $conn = $db->getConexion();
+
+    // Verificar si el correo electrónico ya existe
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE correo_electronico = ?");
+    $stmt->execute([$email]);
+    $result = $stmt->fetch();
+
+    if ($result) {
+        return false; // Email ya existe
     }
 
-    public function login() {
-        $query = "SELECT loginSystemId, loginUsuario, contraseña, emailId 
-                  FROM " . $this->table_name . " 
-                  WHERE loginUsuario = :username";
+    // Hashear la contraseña
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(":username", $this->username);
-        $stmt->execute();
+    // Insertar datos del usuario en la base de datos
+    $stmt = $conn->prepare("INSERT INTO usuarios (correo_electronico, contrasena, nombre_usuario) VALUES (?, ?, ?)");
+    return $stmt->execute([$email, $hashedPassword, $nombre]);
+}
 
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+// Manejar el envío del formulario (tanto login como registro)
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['login'])) {
+        // Manejar el inicio de sesión
+        $email = $_POST['loginUsuario'];
+        $password = $_POST['contrasena'];
 
-        if ($row && $this->password === $row['contraseña']) {
-            $this->id = $row['loginSystemId'];
-            $this->email = $row['emailId'];
-            return true;
+        $usuario = validarUsuario($email, $password);
+
+        if ($usuario) {
+            // Inicio de sesión exitoso, iniciar sesión
+            session_start();
+            $_SESSION['usuario_id'] = $usuario['id'];
+            $_SESSION['usuario_nombre'] = $usuario['nombre_usuario'];
+            header("Location: dashboard.php"); // Redirigir al panel de control
+            exit();
+        } else {
+            echo "<script>document.getElementById('message').innerHTML = 'Email o contraseña incorrectos';</script>";
         }
+    } elseif (isset($_POST['register'])) {
+        // Manejar el registro
+        $email = $_POST['registerEmail'];
+        $password = $_POST['registerPassword'];
+        $nombre = $_POST['registerName'];
 
-        return false;
-    }
-
-    public function getUserData() {
-        $query = "SELECT loginUsuario, emailId 
-                  FROM " . $this->table_name . " 
-                  WHERE loginSystemId = :id";
-
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(":id", $this->id);
-        $stmt->execute();
-
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        if (registrarUsuario($email, $password, $nombre)) {
+            // Registro exitoso, redireccionar al login
+            header("Location: login.php");
+            exit();
+        } else {
+            echo "<script>document.getElementById('message').innerHTML = 'El correo electrónico ya está en uso';</script>";
+        }
     }
 }
-?>
 
-<?php
-session_start();
-header("Content-Type: application/json");
-
-
-$database = new Database();
-$db = $database->getConnection();
-
-$user = new User($db);
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user->username = $_POST['username'] ?? '';
-    $user->password = $_POST['password'] ?? '';
-
-    if ($user->login()) {
-        $_SESSION['user_id'] = $user->id;
-        $_SESSION['username'] = $user->username;
-        echo json_encode(["success" => true, "message" => "Login successful"]);
-    } else {
-        echo json_encode(["success" => false, "message" => "Invalid username or password"]);
-    }
-} else {
-    echo json_encode(["success" => false, "message" => "Invalid request method"]);
-}
 ?>
