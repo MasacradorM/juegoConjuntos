@@ -10,6 +10,7 @@ body {
 }
 
 
+
 .btn {
     margin-top: 35px;
     font-size: 1.5em;
@@ -30,6 +31,16 @@ body {
     height: 160%;
     background-color: #ffffff36;
 }
+.contenedoRegistro{
+    background-color: #ffffff36;
+    border: solid 3px black;
+    position: absolute;
+    margin-top:-200px ;
+    margin-left:1060px ;
+    width: 300px;
+    height: 350px;
+    border-radius: 20px;
+}
 .imagen{
     margin-top: -39%;
 }
@@ -38,7 +49,7 @@ body {
 }
 .contenido-Imagen{
     float: right;
-    margin-right: 20px;
+    margin-right: 10px;
     margin-top: 20px;
 }
 @media (hover: hover){
@@ -96,7 +107,7 @@ p {
     height: 80%;
 }
 
-.modal-content {
+.modal-content1 {
     background-color: #88888800;
     background-image: url('../img/modalUsuario.png');
     background-size: cover;
@@ -145,52 +156,145 @@ p {
     border: solid #88888800;
 }
 
-.close {
-    color: #aaaaaa00;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-}
-/* General Modal Styles */
-.modal-dialog {
-    max-width: 800px; /* Larger modal */
-    margin: 1.75rem auto;
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-family: 'Irish Grover', cursive;
 }
 
 .modal-content {
-    background-color: #f3e5ab; /* Parchment-like background */
-    border: 8px solid #8b4513; /* Brown border like wooden frame */
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.modal-header {
-    background-color: #8b4513; /* Brown header */
-    color: #f3e5ab; /* Light text color */
-    border-bottom: 3px solid #000;
-    padding: 1.5rem;
-}
-
-.modal-title {
-    font-family: 'Irish Grover', cursive;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.close {
-    color: #f3e5ab;
-    font-size: 2rem;
-    opacity: 1;
-}
-
-.close:hover {
+    background-color: #2c3e50;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
     color: #fff;
-    text-shadow: 0 0 10px #fff;
+    position: relative;
 }
 
+.close-inventory, .close-ranking, .close-stats, .close-store {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-inventory:hover, .close-ranking:hover, .close-stats:hover, .close-store:hover {
+    color: black;
+}
+
+/* Inventory Styles */
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.inventory-item {
+    background-color: #34495e;
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Ranking Styles */
+.ranking-list {
+    padding: 20px;
+}
+
+.ranking-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #34495e;
+    border-radius: 5px;
+}
+
+.rank {
+    font-weight: bold;
+    color: gold;
+}
+
+/* Statistics Styles */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.stat-item {
+    background-color: #34495e;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.stat-item h3 {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+/* Store Styles */
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.store-item {
+    background-color: #34495e;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.store-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.buy-btn {
+    background-color: gold;
+    color: #2c3e50;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.buy-btn:hover {
+    background-color: #ffd700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10% auto;
+        width: 90%;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .store-grid {
+        grid-template-columns: 1fr;
+    }
+}

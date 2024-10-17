@@ -17,7 +17,7 @@
     <img id="abrirModal" type="button" src="img/iconoUsuario.png" alt="Pirate Skull" class="imagenUser img-fluid my-3 alegar">
 
     <div id="myModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content1">
             <span class="close">&times;</span>
             <div class="perfilUser"></div>
             <h6>Jack</h6>
@@ -36,25 +36,133 @@
     </div>
 
     <img id="rankingBtn" type="button" src="img/ranking.png" alt="Ranking" class="img-fluid contenido-Imagen">
+ 
+    
 
+
+
+    </div>
+    
+    
     <img id="storeBtn" type="button" src="img/store.png" alt="Store" class="img-fluid contenido-Imagen">
     <br>
     <img id="statsBtn" type="button" src="img/estadisticas.png" alt="Statistics" class="img-fluid contenido-Imagen">
-    <br>
-    <br>
-    <br>
-    <br>
-    <img id="inventoryBtn" type="button" src="img/inventory.png" alt="Inventario" class="img-fluid my-3 contenido-Imagen">
-    <div class="container text-center">
 
+    <img id="inventoryBtn" type="button" src="img/inventory.png" alt="Inventario" class="img-fluid my-3 contenido-Imagen" >
+    <div class="container text-center">
+ 
+      <!-- Add these modal structures after your existing modal -->
+
+<!-- Inventory Modal -->
+<div id="inventoryModal" class="modal">
+    <div class="modal-content inventory-content">
+        <span class="close-inventory">&times;</span>
+        <h2>Inventario</h2>
+        <div class="inventory-grid">
+            <div class="inventory-item">Slot 1</div>
+            <div class="inventory-item">Slot 2</div>
+            <div class="inventory-item">Slot 3</div>
+            <div class="inventory-item">Slot 4</div>
+            <div class="inventory-item">Slot 5</div>
+            <div class="inventory-item">Slot 6</div>
+        </div>
+    </div>
+</div>
+
+<!-- Ranking Modal -->
+<div id="rankingModal" class="modal">
+    <div class="modal-content ranking-content">
+        <span class="close-ranking">&times;</span>
+        <h2>Ranking</h2>
+        <div class="ranking-list">
+            <div class="ranking-item">
+                <span class="rank">1.</span>
+                <span class="player-name">Pirata_Master</span>
+                <span class="score">10,500</span>
+            </div>
+            <div class="ranking-item">
+                <span class="rank">2.</span>
+                <span class="player-name">BlackBeard</span>
+                <span class="score">9,800</span>
+            </div>
+            <div class="ranking-item">
+                <span class="rank">3.</span>
+                <span class="player-name">SeaKing</span>
+                <span class="score">8,900</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Statistics Modal -->
+<div id="statsModal" class="modal">
+    <div class="modal-content stats-content">
+        <span class="close-stats">&times;</span>
+        <h2>Estadísticas</h2>
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>Partidas Jugadas</h3>
+                <p>150</p>
+            </div>
+            <div class="stat-item">
+                <h3>Victorias</h3>
+                <p>75</p>
+            </div>
+            <div class="stat-item">
+                <h3>Tesoros Encontrados</h3>
+                <p>324</p>
+            </div>
+            <div class="stat-item">
+                <h3>Tiempo Jugado</h3>
+                <p>48h 30m</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Store Modal -->
+<div id="storeModal" class="modal">
+    <div class="modal-content store-content">
+        <span class="close-store">&times;</span>
+        <h2>Tienda</h2>
+        <div class="store-grid">
+            <div class="store-item">
+                <img src="img/item1.png" alt="Item 1">
+                <h3>Espada Pirata</h3>
+                <p>500 monedas</p>
+                <button class="buy-btn">Comprar</button>
+            </div>
+            <div class="store-item">
+                <img src="img/item2.png" alt="Item 2">
+                <h3>Mapa del Tesoro</h3>
+                <p>800 monedas</p>
+                <button class="buy-btn">Comprar</button>
+            </div>
+            <div class="store-item">
+                <img src="img/item3.png" alt="Item 3">
+                <h3>Brújula Mágica</h3>
+                <p>1000 monedas</p>
+                <button class="buy-btn">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
         <div class="row">
             <div class="col-12">
     
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="row">
             <div class="col-12 col-md-4 mb-3">
                 <div class="contenedorBotones acomodo">
+                    
                     <img src="img/calavera.png" alt="Store" class=" imagen img-fluid">
                     <br>
                     <button style="background-image: url('./img/jugar-Solo.png');" class="btn" onclick="window.location.href='jugarsolo.html'"></button>
@@ -87,113 +195,11 @@
             </div>
         </div>
     </div>
-    
-    <!-- Store Modal -->
-<div class="modal fade" id="storeModal" tabindex="-1" role="dialog" aria-labelledby="storeModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="storeModalLabel">Tienda Pirata</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h3>Bienvenido a la tienda pirata</h3>
-                <p>Aquí puedes comprar objetos y mejoras para tu aventura.</p>
-                <ul>
-                    <li>Espadas y sables</li>
-                    <li>Mapas del tesoro</li>
-                    <li>Pociones mágicas</li>
-                    <li>Amuletos de la suerte</li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Comprar</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Statistics Modal -->
-<div class="modal fade" id="statsModal" tabindex="-1" role="dialog" aria-labelledby="statsModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="statsModalLabel">Estadísticas del Pirata</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h3>Tus logros y estadísticas</h3>
-                <ul>
-                    <li>Tesoros encontrados: 15</li>
-                    <li>Batallas ganadas: 23</li>
-                    <li>Nivel de navegación: 7</li>
-                    <li>Reputación pirata: Temible</li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
+    <div class="contenedoRegistro">
 
-<!-- Inventory Modal -->
-<div class="modal fade" id="inventoryModal" tabindex="-1" role="dialog" aria-labelledby="inventoryModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="inventoryModalLabel">Inventario del Bucanero</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h3>Tu botín y equipamiento</h3>
-                <ul>
-                    <li>Sable de acero: 1</li>
-                    <li>Mapa del tesoro: 2</li>
-                    <li>Ron: 5 botellas</li>
-                    <li>Monedas de oro: 100</li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Usar objeto</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
     </div>
-</div>
 
-<!-- Ranking Modal -->
-<div class="modal fade" id="rankingModal" tabindex="-1" role="dialog" aria-labelledby="rankingModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="rankingModalLabel">Ranking de Piratas</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h3>Los piratas más temidos de los siete mares</h3>
-                <ol>
-                    <li>Barbanegra - 10,000 puntos</li>
-                    <li>Anne Bonny - 9,500 puntos</li>
-                    <li>Jack Sparrow - 9,000 puntos</li>
-                    <li>Tú - 8,500 puntos</li>
-                </ol>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
     <script src="js/modal2.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/Modales.js"></script>
