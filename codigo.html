@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/codigo.css">
-    <!--icono-->
     <link rel="icon" href="img/icono.icon">
-    <title>Document</title>
+    <title>Verificar Código</title>
 </head>
 <body>
     <div class="container">
       <div class="form-container">
-        <h2 class="inicio">Recupera Contraseña</h2>
-        <form>
+        <h2 class="inicio">Verificar Código</h2>
+        <form action="verificar.php" method="POST">
           <label for="code">Introduce Código:</label>
-          <input type="text" id="code" name="code" required>
+          <input type="text" id="code" name="codigo_verificacion" required>
+          <input type="hidden" name="email" value="<?php echo $_GET['email']; ?>">
           <button type="submit">Siguiente</button>
         </form>
       </div>
     </div>
 <script src="js/codigo.js"></script>
-  </body>
+</body>
 </html>
