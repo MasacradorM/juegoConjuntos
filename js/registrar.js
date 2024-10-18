@@ -1,15 +1,10 @@
-const form = document.getElementById('registration-form');
+document.getElementById('registration-form').addEventListener('submit', function(event) {
+    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    // Simulación de envío de datos al servidor (reemplazar con tu lógica real)
-
-    // Simulación de éxito:
-    alert('¡Cuenta creada con éxito!');
-
-    // Redirige al login después de que el usuario cierre la alerta
-    setTimeout(() => {
-        window.location.href = 'login.html';
-    }, 100);
+    if (!email || !password || !username) {
+        alert('Por favor, complete todos los campos.');
+        event.preventDefault(); // Detener el envío del formulario
+    }
 });
