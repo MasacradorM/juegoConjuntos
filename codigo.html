@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/codigo.css">
-    <link rel="icon" href="img/icono.icon">
     <title>Verificar Código</title>
+    <link rel="icon" href="img/icono.icon">
 </head>
 <body>
     <div class="container">
       <div class="form-container">
         <h2 class="inicio">Verificar Código</h2>
-        <form action="verificar.php" method="POST">
-          <label for="code">Introduce Código:</label>
-          <input type="text" id="code" name="codigo_verificacion" required>
-          <input type="hidden" name="email" value="<?php echo $_GET['email']; ?>">
-          <button type="submit">Siguiente</button>
+        <form id="formularioVerificacion">
+          <label for="codigo">Introduce Código:</label>
+          <input type="text" id="codigo" name="codigo" required>
+          <input type="hidden" id="email" name="email">
+          <button type="submit">Verificar</button>
         </form>
       </div>
     </div>
-<script src="js/codigo.js"></script>
+    <script src="js/codigo.js"></script>
 </body>
 </html>
