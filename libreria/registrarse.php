@@ -21,13 +21,19 @@ if (isset($_POST['email'], $_POST['password'], $_POST['username'])) {
     ];
 
     try {
+        // Intentar ejecutar la consulta
         if ($db->execute($query, $params)) {
             echo json_encode(['success' => true, 'message' => 'Usuario registrado correctamente']);
         } else {
             echo json_encode(['success' => false, 'message' => 'Error al registrar en la base de datos']);
         }
     } catch (PDOException $e) {
-        echo json_encode(['success' => false, 'message' => 'Error en la consulta: ' . $e->getMessage()]);
+        // Manejo del error en caso de duplicación de nombre o email
+        if ($e->getCode() == '23505') { // 23505 es el código de error de unicidad en PostgreSQL
+            echo json_encode(['success' => false, 'message' => 'El nombre de usuario o correo electrónico ya existe, elige otro.']);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Error en la consulta: ' . $e->getMessage()]);
+        }
     }
 } else {
     echo json_encode(['success' => false, 'message' => 'Datos incompletos', 'post' => $_POST]);

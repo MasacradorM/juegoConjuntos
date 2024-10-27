@@ -16,19 +16,29 @@
         <p class="privez">¿Es tu primera vez? </p>
         <p class="registrar"><a href="resgistrarse.html">Registrarse</a></p>
       </div>
-      <form action="libreria/login.php" method="post">
-          <label for="email">Email:</label>
-          <input type="text" id="loginUsuario" name="loginUsuario" required>
-          <label for="password">Contraseña:</label>
-          <input type="password" id="contrasena" name="contrasena" required>
-          <div class="Olvidaste">
-            <a href="olvidaste.html">¿Olvidaste tu contraseña?</a>
-          </div>
-          <button type="submit" value="Login">Iniciar Sesión</button>
+        <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="text" id="loginUsuario" name="loginUsuario" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+            <div class="Olvidaste">
+                <a href="olvidaste.html">¿Olvidaste tu contraseña?</a>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
         </form>
         <div id="message"></div>
         <div id="userData"></div>
       </div>
     </div>
-  </body>
+
+    <!-- Modal de error -->
+    <div id="errorModal" style="display:none;" class="modal">
+      <div class="modal-content">
+          <p>Usuario o contraseña incorrectos.</p>
+      </div>
+  </div>
+
+  <!-- Archivo JavaScript -->
+  <script src="js/login.js"></script>
+</body>
 </html>
