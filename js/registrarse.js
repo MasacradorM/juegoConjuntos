@@ -1,51 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.form-container');
-    console.log('Formulario encontrado:', form); // Verificar si encuentra el formulario
-    
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        console.log('Formulario enviado');
-        
-        const formData = new FormData();
-        const emailInput = form.querySelector('input[type="email"]');
-        const passwordInput = form.querySelector('input[type="password"]');
-        const playerNameInput = form.querySelector('input[type="text"]');
-        
-        // Verificar si se encuentran los campos
-        console.log('Campos encontrados:', {
-            email: emailInput?.value,
-            password: passwordInput?.value,
-            playerName: playerNameInput?.value
+document.getElementById('formRegistro').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    console.log("Formulario enviado"); // Esto debería aparecer en la consola
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const username = document.getElementById('username').value;
+
+    // Usar URLSearchParams para enviar los datos en formato form-urlencoded
+    const data = new URLSearchParams();
+    data.append('email', email);
+    data.append('password', password);
+    data.append('username', username);
+
+    try {
+        const response = await fetch('libreria/registrarse.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: data.toString()
         });
-        
-        formData.append('email', emailInput?.value || '');
-        formData.append('password', passwordInput?.value || '');
-        formData.append('playerName', playerNameInput?.value || '');
-        
-        try {
-            console.log('Iniciando fetch a registrarse.php');
-            const response = await fetch('libreria/registrarse.php', {
-                method: 'POST',
-                body: formData
-            });
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            console.log('Respuesta del servidor:', data);
-            
-            if (data.success) {
-                localStorage.setItem('registerEmail', formData.get('email'));
-                alert(data.message);
-                window.location.href = 'codigo.html';
-            } else {
-                alert(data.message);
-            }
-        } catch (error) {
-            console.error('Error completo:', error);
-            alert('Error al procesar la solicitud: ' + error.message);
+
+        console.log('Respuesta del servidor:', response); // Agrega esta línea
+
+        if (!response.ok) {
+            throw new Error('Respuesta de red no satisfactoria');
         }
-    });
+
+        const result = await response.json();
+        console.log(result); // Esto debería mostrar la respuesta del servidor
+
+        if (result.success) {
+            alert('Registro exitoso. Revisa tu correo para el código de verificación.');
+        } else {
+            alert('Error en el registro: ' + result.message);
+        }
+    } catch (error) {
+        console.error('Error en la solicitud:', error);
+        alert('Hubo un problema con la solicitud: ' + error.message);
+    }
 });
