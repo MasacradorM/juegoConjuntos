@@ -61,7 +61,7 @@ button {
     height: 60px;
     position: absolute;
     margin-left: 33px;
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
 .inicio {
@@ -70,7 +70,6 @@ button {
     font-size: 15px;
     position: absolute;
     margin-top: 105px;
-    margin-left: 10px;
+    margin-left: 90px;
     font-size: 35px;
 }
-
