@@ -30,3 +30,16 @@ function changePassword(password) {
   console.log('Nueva contraseña:', password);
   return true; // Puedes devolver true si el cambio de contraseña fue exitoso
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector("form");
+  const passwordInput = document.getElementById("password");
+  const confirmPasswordInput = document.getElementById("confirm_password");
+
+  form.addEventListener("submit", function(event) {
+      if (passwordInput.value !== confirmPasswordInput.value) {
+          event.preventDefault(); // Detener el envío del formulario
+          alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
+      }
+  });
+});

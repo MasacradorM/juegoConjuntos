@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icono.icon">
     <link rel="stylesheet" href="css/codigo.css">
     <title>Verificar Código</title>
-    <link rel="icon" href="img/icono.icon">
 </head>
 <body>
     <div class="container">
-      <div class="form-container">
-        <h2 class="inicio">Verificar Código</h2>
-        <form id="formularioVerificacion">
-          <label for="codigo">Introduce Código:</label>
-          <input type="text" id="codigo" name="codigo" required>
-          <input type="hidden" id="email" name="email">
-          <button type="submit">Verificar</button>
-        </form>
-      </div>
+        <div class="form-container">
+            <h2 class="inicio">Verificar Código</h2>
+            <form id="formularioVerificacion">
+              <label for="codigo">Código:</label>
+              <input type="text" id="codigo" name="codigo" required>
+              
+              <!-- El campo email ahora obtiene el valor desde la sesión PHP -->
+              <input type="hidden" id="email" name="email" value="<?php echo htmlspecialchars($_SESSION['email']); ?>">
+          
+              <button type="submit">Verificar</button>
+          </form>
+          
+        </div>
     </div>
     <script src="js/codigo.js"></script>
 </body>

@@ -1,28 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--icono-->
     <link rel="icon" href="img/icono.icon">
     <link rel="stylesheet" href="css/cambiarcontra.css">
-    <title>Document</title>
+    <title>Cambiar Contraseña</title>
 </head>
 <body>
     <div class="container">
         <div class="form-container">
             <h2 class="inicio">Recupera Contraseña</h2>
-            <form>
+            <form method="POST" action="libreria/guardarContraseña.php">
                 <label for="password">Escribe tu nueva contraseña:</label>
-                <input type="password" id="password" name="password" required>
-
+                <input type="password" id="password" name="nueva_contrasena" required>
                 <label for="confirm_password">Verifica tu contraseña:</label>
                 <input type="password" id="confirm_password" name="confirm_password" required>
-
                 <button type="submit">Siguiente</button>
             </form>
         </div>
     </div>
-    <script src="js/cmabiarcontra.js"></script>
+    <script src="js/cambiarcontra.js"></script>
 </body>
 </html>
