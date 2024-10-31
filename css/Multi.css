@@ -81,13 +81,14 @@ body {
     background-image: url("../img/pergamino.PNG");
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 600px;
     text-align: center;
     position: relative;
     background-size: cover; /* Asegura que la imagen de fondo se ajuste */
     background-position: center; /* Centra la imagen de fondo */
-    width: 400px;
-    height: 400px;
+    width: 32%;
+    height: 80%;
+
 }
 
 
@@ -123,4 +124,9 @@ input, button {
     position: absolute;
     margin-top: 100px;
    margin-left: -200px;
+}
+.botonCrear{
+    position: absolute;
+    margin-top: 100px;
+   margin-left: -230px;
 }

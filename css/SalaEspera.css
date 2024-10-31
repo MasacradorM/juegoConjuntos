@@ -1,0 +1,58 @@
+body {
+    background-image: url('../img/salaEspera.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    overflow: hidden;
+    font-family: 'Kaushan Script', cursive;
+
+  }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    margin: -25px;
+}
+.boxf1 {
+    width: 120px;
+    height: 120px;
+    margin: 50px;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #007BFF;
+    margin-top: 60px;
+}
+.TituloEspera{
+    background-image: url("../img/TituloEspera.png");
+    background-size: cover;
+    background-position: center;
+    width: 30%;
+    height: 8%;
+    margin-top: -40%;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+.bottoniniciar{
+    background-image: url("../img/TituloEspera.png");
+    background-size: cover;
+    background-position: center;
+    width: 30%;
+    height: 8%;
+    margin-top: 40%;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
