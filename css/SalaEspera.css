@@ -29,8 +29,27 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #007BFF;
     margin-top: 60px;
+}
+
+.player-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: -120%;
+    background-color: brown;
+}
+
+.explusar-btn {
+    background-image: url("../img/boton.png");
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    margin-top: 10%;
+    background-color: transparent;
+    border: 2px transparent;
+    height: 4%;
+    width: 8%;
+    
 }
 .TituloEspera{
     background-image: url("../img/TituloEspera.png");
@@ -49,10 +68,93 @@ body {
     background-size: cover;
     background-position: center;
     width: 30%;
-    height: 8%;
-    margin-top: 40%;
+    height: 6%;
+    margin-top: 37%;
     position: absolute;
     text-align: center;
     color: white;
     font-size: 30px;
+}
+.img1 {
+    background-image: url('../img/luisP.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.img2 {
+    background-image: url('../img/SOFIP.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.img3 {
+    background-image: url('../img/pepeP.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.img4 {
+    background-image: url('../img/JackPIRATA.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.img5 {
+    background-image: url('../img/pepeP.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.img6 {
+    background-image: url('../img/SOFIP.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.img7 {
+    background-image: url('../img/luisP.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.img8 {
+    background-image: url('../img/pepeP.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.img9 {
+    background-image: url('../img/luisP.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.img10 {
+    background-image: url('../img/SOFIP.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.img11 {
+    background-image: url('../img/luisP.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.img12 {
+    background-image: url('../img/JackPIRATA.png');
+    background-size: cover;
+    background-position: center;
+}
+.espera{
+    background-image: url("../img/TituloEspera.png");
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 6%;
+    margin-top: 37%;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 30px; 
 }
