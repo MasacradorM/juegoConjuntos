@@ -1,46 +1,166 @@
-/* styles.css */
 body {
+    font-family: 'Old Standard TT', serif;
+    background-image: url('../img/fondoSopa.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Cambiado a column para apilar elementos verticalmente */
     align-items: center;
-    font-family: Arial, sans-serif;
+    justify-content: flex-start; /* Cambiado a flex-start para que comience desde arriba */
+    padding-top: 2rem; /* Añadido padding superior para espacio */
+    overflow-x: hidden;
+    cursor: url('../img/cursor.PNG'), auto;
 }
 
+h1 {
+    background-image: url("../img/TituloEspera.png");
+    font-size: 2.5em;
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem; /* Cambiado para dar espacio entre título y contenido */
+    text-align: center;
+    width: 30%;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 220%;
+    padding: 0 2rem;
+}
+
+/* Estilo para la cuadrícula */
 .grid {
     display: grid;
-    grid-template-columns: repeat(10, 40px);
-    grid-template-rows: repeat(10, 40px);
+    grid-template-columns: repeat(10, 50px);
     gap: 5px;
-    margin-top: 20px;
+    background-color: #ffe4c4;
+    padding: 10px;
+    border: 3px solid #8b4513;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
 }
 
 .cell {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #f0d9b5;
     font-size: 1.2em;
+    color: #4a3b31;
     font-weight: bold;
+    border-radius: 4px;
     cursor: pointer;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
+    transition: background-color 0.3s;
 }
 
+.cell:hover {
+    background-color: black;
+    color: white; /* Añadido para mejor visibilidad al hacer hover */
+}
+
+/* Estilos para las palabras seleccionadas */
 .cell.selected {
-    background-color: #a0e0a0;
+    background-color: #c4a484;
+    color: #fff;
 }
 
 #words {
-    margin-top: 20px;
+    background-image: url("../img/pergamino.PNG");
+    background-size: cover;
+    background-position: center;
+    max-width: 30%
+    margin-left: 5%;
+    padding: 1rem; /* Añadido padding para mejor espaciado */
+    border-radius: 8px; /* Añadido para consistencia con el diseño */
+    margin-left: 70%;
+    margin-top: -38%;
+}
+
+#words h2 {
+    font-size: 1.5em;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 1rem; /* Añadido espacio después del título */
 }
 
 #word-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 0;
+    font-size: 1.2em;
 }
 
 #word-list li {
-    font-size: 1.1em;
-    padding: 5px;
+    margin: 5px 0;
+    padding: 5px 10px; /* Añadido padding para mejor espaciado */
+    color: #ffffff; /* Cambiado para mejor visibilidad sobre fondo marrón */
+    text-align: center;
+}
+
+#word-list li {
+    transition: color 0.3s;
+}
+
+#word-list li.found {
+    color: #4a3b31;
+    text-decoration: line-through;
+}
+
+/* Estilo responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        padding-top: 1rem;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 1.5rem;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(10, 40px);
+        gap: 3px;
+    }
+
+    .cell {
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+
+    #words {
+        max-width: 100%;
+        margin-left: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(10, 30px);
+    }
+
+    .cell {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
 }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/Nivel12.css">
+    <link rel="stylesheet" href="css/modal12.css">
+    <title>Nivel 1</title>
+    <!--icono-->
+    <link rel="icon" href="img/icono.icon">
+</head>
+<body>
+    <div id="timer" class="timer">05:00</div> <!-- Contador de 5 minutos -->
+    <div class="jefe1" id="jefe"></div>
+    <div class="pirata1" id="pirata"></div>
+    <div class="personaje jefe">
+        <div class="health-barj">
+            <div class="health-fill" id="jefe-health"></div>
+        </div>
+        <p class="health-textj" id="jefe-health-text">100%</p>
+    </div>
+    <div class="personaje pirata">
+        <div class="health-barp">
+            <div class="health-fill" id="pirata-health"></div>
+        </div>
+        <p class="health-textp" id="pirata-health-text">100%</p>
+    </div>
+    
+
+    <button class="habilidad" onclick="openModal(1)">Golpe simple</button>
+    <button class="habilidad1" onclick="openModal(2)">Golpe de poder</button>
+
+    <!-- Modal de pregunta -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Pregunta</h2>
+            <p id="modal-question">Pregunta dinámica</p>
+            <form id="quizForm">
+                <input type="radio" name="answer" value="a" id="a">
+                <label for="a" id="label-a">Opción A</label><br>
+                <input type="radio" name="answer" value="b" id="b">
+                <label for="b" id="label-b">Opción B</label><br>
+                <input type="radio" name="answer" value="c" id="c">
+                <label for="c" id="label-c">Opción C</label><br>
+                <input type="radio" name="answer" value="d" id="d">
+                <label for="d" id="label-d">Opción D</label><br>
+                <button type="button" onclick="checkAnswer()">Enviar Respuesta</button>
+            </form>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <!-- Pantalla de ataque -->
+    <div id="attackScreen" class="modal">
+        <div class="modal-content">
+            <h2 id="attack-title"></h2>
+            <p id="attack-message"></p>
+            <button onclick="closeAttackScreen()">Continuar</button>
+        </div>
+    </div>
+
+
+    <button class="cambiar-personaje" onclick="openCharacterModal()">Cambiar Personaje</button>
+
+    <!-- Modal para cambiar el personaje -->
+    <div id="characterModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCharacterModal()">&times;</span>
+            <h2>Seleccionar Personaje</h2>
+            <div id="character-options">
+                <img src="img/jack.png" alt="Pirata1" onclick="selectCharacter('pirata1')">
+                <img src="img/pirato.png" alt="Pirata 2" onclick="selectCharacter('pirata2')">
+                <img src="img/mujer.png" alt="Pirata 3" onclick="selectCharacter('pirata3')">
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/Nivel12.js"></script>
+    <script src="js/GanasoPierdes.js"></script>
+
+</body>
+</html>
