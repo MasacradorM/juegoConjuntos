@@ -1,6 +1,6 @@
 /* Fondo */
 body {
-  background-image: url('../img/Fondonivel1.png');
+  background-image: url('../img/mapa1.webp');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -61,7 +61,7 @@ body {
 
 .jefe1 {
   right: 10%;
-  background-image: url('../img/capitan1.png');
+  background-image: url('../gif/Enemigo1.gif');
 }
 
 .pirata1 {
@@ -282,7 +282,7 @@ button.habilidad:hover, button.habilidad1:hover {
 }
 .jefe1 {
   right: 10%;
-  background-image: url('../img/capitan1.png');
+  background-image: url('../gif/Enemigo1.gif');
   background-size: cover; /* Mantener el tamaño de la imagen del jefe */
 }
 

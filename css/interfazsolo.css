@@ -12,42 +12,48 @@ body {
   }
     
   .puerta {
-    background-image: url("../img/cerrada.png");
+
     background-size: cover;
     background-position: center;
     margin: 10px;
     width: 270px;
-    height: 490px;
+    height: 570px;
     background-color: transparent; 
     position: absolute;
-    margin-top: 170px;
+    margin-top: 200px;
     background-repeat: no-repeat; 
     background-position: center; 
     margin-left: -890px;
     background-size: cover;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 10px;
     
 }
 .puerta1 {
+ 
   background-size: cover;  
   background-repeat: no-repeat; 
   background-position: center; 
   font-size: 30px !important;
   margin: 10px;
   width: 280px;
-  height: 490px;
+  height: 570px;
   position: absolute;
-  margin-top: 170px;
+  margin-top: 200px;
+
   margin-left: 10px;
   overflow: hidden; 
 }
 .puerta2 {
+ 
   font-size: 30px !important;
   margin: 10px;
   width: 270px;
-  height: 490px;
+  height: 570px;
   background-color: transparent; 
   position: absolute;
-  margin-top: 170px;
+  margin-top: 200px;
   margin-left: 930px;
   background-repeat: no-repeat; 
   background-position: center; 
