@@ -1,87 +1,200 @@
 body {
-    font-family: 'Old Standard TT', serif; /* Replace 'Old Standard TT' with the actual font family name */
-    background-image: url('../img/pixelcut-export.png');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center; 
-      overflow: hidden;
-      cursor: url('../img/cursor.PNG'), auto;
-    }
-    .form-container {
-        background-image: url("../img/pergamino.PNG");
-        background-size: contain;
-        background-repeat: no-repeat;
-        padding: 40px;
-        border-radius: 10px;
-        width: 600px;
-        height: 600px;
-        margin-left: -400px;
-      }
-      
-      
-      form {
-        display: flex;
-       font-family: 'Old Standard TT', serif;
-        flex-direction: column;
-        margin-top: 150px;
-        position: absolute;
-        margin-left: 46px;
-        font-size: 20px;
-      }
-      
-      label {
-        margin-bottom: 5px;
-        color: #060606; /* Misma tonalidad que el título */
-        
-      }
-      
+  font-family: 'Old Standard TT', serif; /* Ensure this font is loaded */
+  background-image: url('../img/pixelcut-export.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  overflow: hidden;
+  cursor: url('../img/cursor.PNG'), auto;
+}
+
+.form-container {
+  background-image: url("../img/pergamino.PNG");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 40px;
+  border-radius: 10px;
+  width: 600px; /* Set a fixed width */
+  height: auto; /* Allow height to adjust based on content */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Make form take full width */
+  align-items: center; /* Center form elements */
+  margin-top: 20px; /* Margin at the top */
+  font-size: 20px; /* Base font size */
+}
+
+label {
+  margin-bottom: 5px;
+  color: #060606; /* Text color */
+}
+
 input {
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 2px solid #ccc;
-        border-radius: 5px;
-        background-color: #f5f5f0; 
-        width: 250px;
-        height: 15px;
-        border: 3px solid #000000;
-        font-size: 20px;
-       
-  }
-      
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 3px solid #000000; /* Border color */
+  border-radius: 5px;
+  background-color: #f5f5f0; 
+  width: 250px; /* Fixed width for inputs */
+  font-size: 20px; /* Input font size */
+  text-align: center; /* Center text in input */
+}
 
 button {
-    background-color: #774400;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 15px;
-    width: 200px;
-    height: 60px;
-    position: absolute;
-    margin-left: 33px;
-    margin-top: 280px;
+  background-color: #774400; /* Button color */
+  color: white; /* Button text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  width: 200px; /* Fixed width for button */
+  height: 60px;
+  margin-top: 20px; /* Space above button */
 }
 
 img {
-    max-width: 40px; /* Ajusta el tamaño según tu imagen */
-    margin-bottom: 20px;
-    position: absolute;
-    margin-top: 410px ;
-    margin-left: 160px;
+  max-width: 40px; /* Image size */
+  margin-bottom: 20px;
+}
+
+.inicio {
+  color: #774400; 
+  text-align: center;
+  font-size: 40px; /* Title size */
+  margin-bottom: 20px; /* Space below title */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .form-container {
+      padding: 20px; /* Adjust padding for smaller screens */
+      width: 90%; /* Make container more responsive */
   }
 
-  .inicio{
-    color: #774400; 
-    text-align: center;
-    font-size: 15px;
-    position: absolute;
-    margin-top: -65px;
-    margin-left: 30px;
-    font-size: 40px;
-   }
+  input {
+      width: 70%; /* Adjust input width for smaller screens */
+      font-size: 18px; /* Slightly reduce font size */
+  }
+
+  button {
+      width: 80%; /* Button width for smaller screens */
+  }
+
+  .inicio {
+      font-size: 30px; /* Adjust title size */
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+      width: 95%; /* Full width for very small screens */
+  }
+
+  .inicio {
+      font-size: 25px; /* Further adjust title size */
+  }
+}
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 70px; /* Adjusted padding for smaller screens */
+  }
+
+  input {
+    width: 70%; /* Full width for smaller screens */
+    height: 10px;
+    margin-left: -16px; /* Adjust to center align */
+  }
+
+  .inicio {
+    font-size: 30px; /* Adjust font size for smaller screens */
+    margin-left: -36px; /* Adjust for better alignment */
+  }
+
+  .registrar {
+    margin-top: 0; /* Reset margin for smaller screens */
+    margin-left: -46px; /* Adjust alignment */
+  }
+
+  .Olvidaste {
+    margin-top: -10px; /* Adjust margin for smaller screens */
+    margin-left: -36px; /* Adjust alignment */
+  }
+
+  label {
+    margin-left: -36px; /* Align labels */
+  }
+
+  .privez {
+    margin-left: -36px; /* Align private text */
+  }
+
+  button {
+    height: 40px;
+    width: 150px;
+    margin-left: -30px; /* Adjust button alignment */
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    width: 115%; /* Full width on very small screens */
+    margin-top: 10px; /* Adjust top margin */
+  }
+
+  .inicio {
+    font-size: 25px; /* Further adjust font size */
+   
+  }
+}
+
+/* Media Queries for desktop responsiveness */
+@media (min-width: 1025px) {
+  .form-container {
+    padding: 74px; /* Increase padding for larger screens */
+    max-width: 60%; /* Set a smaller max width for better aesthetics */
+    margin-left: -494px;
+    margin-top: 19px;
+  }
+
+  .inicio {
+    margin-left: -340px; /* Adjust for better alignment */
+    
+  }
+
+  input {
+    max-width: 250px; /* Increase max width for inputs */
+    font-size: 22px; /* Increase input font size */
+    height: 20px;
+    margin-left: -340px; /* Adjust for better alignment */
+  }
+
+  button {
+    max-width: 260px; /* Increase button max width */
+    font-size: 15px; /* Increase button font size */
+    margin-left: -340px; /* Adjust for better alignment */
+    height: 40px;
+    margin-top: 40px;
+
+  }
+
+
+  label {
+    margin-left: -340px; /* Adjust for better alignment */
+  }
+
+  a {
+    margin-left: -60px; /* Align links */
+  }
+}

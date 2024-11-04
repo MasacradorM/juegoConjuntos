@@ -346,3 +346,27 @@ button.cambiar-personaje:hover {
   user-select: none; /* Evita la selección de texto */
   z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 360px) {
+  .jefe1, .pirata1, .pirata2, .pirata3 {
+    width: 110px;
+    height: 110px;
+    padding: 30px;
+  }
+
+  button.habilidad, button.habilidad1, button.cambiar-personaje {
+    padding: 8px 15px;
+    font-size: 12px;
+    bottom: 5%;
+  }
+
+  .timer {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+  .health-bar-container {
+    gap: 8px;
+    width: 10px;
+  }
+}
+

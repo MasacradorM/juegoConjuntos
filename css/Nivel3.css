@@ -346,3 +346,69 @@ body {
     user-select: none; /* Evita la selección de texto */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
   }
+  @media (max-width: 360px) {
+    .jefe1, .pirata1, .pirata2, .pirata3 {
+      width: 110px;
+      height: 110px;
+      padding: 30px;
+    }
+  
+    button.habilidad, button.habilidad1, button.cambiar-personaje {
+      padding: 8px 15px;
+      font-size: 12px;
+      bottom: 5%;
+    }
+  
+    .timer {
+      font-size: 16px;
+      padding: 8px 10px;
+    }
+    .health-bar-container {
+      gap: 8px;
+      width: 10px;
+    }
+  }
+  
+  @media (min-width: 577px) and (max-width: 767px) {
+    .jefe1, .pirata1, .pirata2, .pirata3 {
+      width: 220px;
+      height: 270px;
+    }
+  
+    button.habilidad, button.habilidad1, button.cambiar-personaje {
+      padding: 9px 18px;
+      font-size: 13px;
+    }
+  
+    .timer {
+      font-size: 16px;
+      padding: 8px 10px;
+    }
+    .health-bar-container {
+      gap: 8px;
+    }
+  }
+  
+  /* Pantallas medianas (tablets grandes y phablets) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .jefe1, .pirata1, .pirata2, .pirata3 {
+      width: 180px;
+      height: 250px;
+    }
+  
+    button.habilidad, button.habilidad1, button.cambiar-personaje {
+      padding: 3px 3px;
+      font-size: 14px;
+    }
+  
+    .timer {
+      font-size: 18px;
+      padding: 8px 12px;
+    }
+    .health-bar-container {
+      padding: 1px 3px;
+      font-size: 14px;
+    }
+  }
+  
+  

@@ -17,10 +17,10 @@ body {
     background-position: center;
     margin: 10px;
     width: 270px;
-    height: 570px;
+    height: 590px;
     background-color: transparent; 
     position: absolute;
-    margin-top: 200px;
+    margin-top: 230px;
     background-repeat: no-repeat; 
     background-position: center; 
     margin-left: -890px;
@@ -37,24 +37,25 @@ body {
   background-position: center; 
   font-size: 30px !important;
   margin: 10px;
-  width: 280px;
-  height: 570px;
+  width: 300px;
+height: 590px;
   position: absolute;
-  margin-top: 200px;
-
+  margin-top: 230px;
   margin-left: 10px;
+  border-radius: 10px;
   overflow: hidden; 
 }
 .puerta2 {
  
   font-size: 30px !important;
   margin: 10px;
-  width: 270px;
-  height: 570px;
+  width: 300px;
+height: 590px;
+  border-radius: 10px;
   background-color: transparent; 
   position: absolute;
-  margin-top: 200px;
-  margin-left: 930px;
+  margin-top: 230px;
+  margin-left: 940px;
   background-repeat: no-repeat; 
   background-position: center; 
   background-size: cover;
@@ -65,15 +66,15 @@ body {
   color: white;
   font-size: 40px;
   position: absolute;
-  margin-top: -440px;
+  margin-top: -540px;
   font-family: 'Kaushan Script';
 }
 .titulo2{
   color: white;
   font-size: 40px;
   position: absolute;
-  margin-top: -440px;
-  margin-left: 800px;
+  margin-top: -540px;
+  margin-left: 930px;
   font-family: 'Kaushan Script';
 }
 .titulo3{
@@ -81,8 +82,8 @@ body {
   color: white;
   font-size: 36px;
   position: absolute;
-  margin-top: -440px;
-  margin-left: -820px;
+  margin-top: -540px;
+  margin-left: -930px;
   font-family: 'Kaushan Script';
 }
 
