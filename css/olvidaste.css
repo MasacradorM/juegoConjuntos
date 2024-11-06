@@ -1,150 +1,75 @@
 body {
-    background-image: url('../img/pixelcut-export.png');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center; 
-    overflow: hidden;
-    font-family: 'Kaushan Script', cursive;
-  }
-  
-  .form-container {
-    background-image: url("../img/pergamino.PNG");
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 80px; /* Increased padding for more space inside */
-    border-radius: 10px;
-    width: 90%; /* Adjusted for responsiveness */
-    max-width: 70%; /* Increased maximum width */
-    margin: 0 auto; /* Center the container */
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Arrange items vertically */
-    align-items: center; /* Center items horizontally */
-  }
-  
-  form {
-    display: flex;
-    font-family: 'Old Standard TT', serif;
-    flex-direction: column;
-    margin-top: 20px; /* Reduced margin */
-    width: 100%; /* Make form take full width */
-    align-items: center; /* Center form elements */
-    margin-left: -10px; /* Move the form slightly to the left */
-  }
-  
-  label {
-    margin-bottom: 5px;
-    color: #060606; /* Text color */
-  }
-  
-  input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 3px solid #000000; /* Border color */
-    border-radius: 5px;
-    background-color: #f5f5f0; 
-    width: 100%; /* Full width for responsiveness */
-    max-width: 250px; /* Set a max width */
-    font-size: 20px;
-    text-align: center; /* Center the text in the input */
-  }
-  
-  button {
-    background-color: #774400; /* Button color */
-    color: white; /* Text color */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 15px;
-    width: 100%; /* Full width for responsiveness */
-    max-width: 200px; /* Set a max width */
-    height: 60px;
-    margin-top: 20px; /* Adjusted margin */
-  }
-  .inicio {
-    color: #774400; 
-    text-align: center;
-    font-size: 40px; /* Title size */
-  }
+  font-family: 'Old Standard TT', serif; /* Replace 'Old Standard TT' with the actual font family name */
+  background-image: url('../img/pixelcut-export.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: url('../img/cursor.PNG'), auto;
+}
 
-@media (max-width: 768px) {
-    .form-container {
-        padding: 40%; /* Adjusted padding for smaller screens */
-    }
-  
-    input {
-      width: 150%; /* Full width for smaller screens */
-      height: 10px;
-      margin-left: -30px;
-    }
-  
-    .inicio {
-      font-size: 40px; /* Adjust font size for smaller screens */
-      margin-left: -50px;
-    }
-  
-   
-    label{
-      margin-left: -30px;
-      
-    }
-    
-  }
-  
-  button {
-    height: 40px;
-    width: 150px;
-    margin-left: -30px;
-  }
-  
-  @media (max-width: 480px) {
-    .form-container {
-      width: 115%; /* Full width on very small screens */
-      margin-top: 10px; /* Adjust top margin */
-    }
-  
-    .inicio {
-      font-size: 25px; /* Further adjust font size */
-    }
-  }
-  
-  /* Media Queries for desktop responsiveness */
-  @media (min-width: 1025px) {
-    .form-container {
-      padding: 137px;      max-width: 60%; /* Set a smaller max width for better aesthetics */
-      margin-left: 140px;
-      margin-top: 10px;
-    }
-  
-    .inicio {
-      font-size: 90px; /* Increase font size for titles */
-  
-    }
-  
-    input {
-    width: 250px; /* Full width for smaller screens */
-      font-size: 22px; /* Increase input font size */
-      height: 20px;
-      margin-left: -780px;
-    }
-  
-    button {
-      max-width: 260px; /* Increase button max width */
-      font-size: 15px; /* Increase button font size */
-      margin-left: -780px;
-    }
-  
+.form-container {
+  background-image: url("../img/pergamino.PNG");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 40px;
+  border-radius: 10px;
+  width: 600px;
+  height: 600px;
+  margin-left: -400px;
+}
 
-    .inicio {
-      font-size: 40px; /* Further adjust font size */
-      margin-left: -780px;
-    }
-   
-    label{
-         margin-left: -780px;
-    }
-  }
-  
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 260px;
+  position: absolute;
+  margin-left: 46px;
+  font-size: 20px;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #060606;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f0;
+  width: 250px;
+  height: 15px;
+  border: 3px solid #000000;
+  font-size: 20px;
+}
+
+button {
+  background-color: #774400;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  width: 200px;
+  height: 60px;
+  position: absolute;
+  margin-left: 33px;
+  margin-top: 150px;
+}
+
+.inicio {
+  color: #774400;
+  text-align: center;
+  font-size: 15px;
+  position: absolute;
+  margin-top: 105px;
+  margin-left: 90px;
+  font-size: 35px;
+}
