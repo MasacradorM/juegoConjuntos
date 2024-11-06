@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 header('Content-Type: application/json');
 require_once 'Database.php';
@@ -8,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contrasena = $_POST['contrasena'] ?? '';
 
     if (empty($loginUsuario) || empty($contrasena)) {
+        ob_end_clean();
         echo json_encode(['success' => false, 'message' => 'Por favor, complete todos los campos.']);
         exit;
     }
@@ -24,14 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (password_verify($contrasena, $user['contrasena'])) {
                 $_SESSION['usuarioId'] = $user['usuariosId'];
                 $_SESSION['nombre'] = $user['nombre'];
+                ob_end_clean();
                 echo json_encode(['success' => true]);
             } else {
+                ob_end_clean();
                 echo json_encode(['success' => false, 'message' => 'Usuario o contraseña incorrectos.']);
             }
         } else {
+            ob_end_clean();
             echo json_encode(['success' => false, 'message' => 'Usuario o contraseña incorrectos.']);
         }
     } catch (PDOException $e) {
+        ob_end_clean();
         echo json_encode(['success' => false, 'message' => 'Error en la consulta: ' . $e->getMessage()]);
     }
 }

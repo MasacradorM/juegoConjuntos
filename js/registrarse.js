@@ -32,6 +32,7 @@ document.getElementById('formRegistro').addEventListener('submit', async (event)
 
         if (result.success) {
             alert('Registro exitoso. Revisa tu correo para el código de verificación.');
+            window.location.href = 'login.html';  // Cambia esta ruta a la página de tu elección
         } else {
             alert('Error en el registro: ' + result.message);
         }

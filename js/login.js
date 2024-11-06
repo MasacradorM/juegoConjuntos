@@ -19,7 +19,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
         const result = await response.json();
 
         if (result.success) {
-            window.location.href = '../inicio.html';
+            window.location.href = 'inicio.html';
         } else {
             showModal();
         }

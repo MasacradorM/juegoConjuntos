@@ -7,37 +7,20 @@ use PHPMailer\PHPMailer\Exception;
 require '../PHPMailer/Exception.php';
 require '../PHPMailer/PHPMailer.php';
 require '../PHPMailer/SMTP.php';
-require 'Database.php'; 
 
 session_start(); 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email']); 
+// Generar un código aleatorio de 6 dígitos
+$codigo = rand(100000, 999999);
 
-    $db = Database::getInstance();
-    $connection = $db->getConnection();
+// Almacenar el código en la sesión para su validación más tarde
+$_SESSION['codigo_verificacion'] = $codigo;
 
-    $query = "SELECT * FROM usuarios WHERE email = :email"; 
-    $stmt = $connection->prepare($query);
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
+// Obtener el correo electrónico del formulario
+$email = $_POST['email'];
 
-    if ($stmt->rowCount() === 0) {
-        die('El email no existe en nuestra base de datos.');
-    }
-
-    $codigo = str_pad(mt_rand(0, 999999), 6, '0', STR_PAD_LEFT); // Genera un código de 6 dígitos
-
-    // Almacena el código en la base de datos para el email correspondiente
-    $query = "UPDATE usuarios SET codigo = :codigo, verificado = false WHERE email = :email";
-    $stmt = $connection->prepare($query);
-    $stmt->bindParam(':codigo', $codigo);
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-
-
-
-    $mail = new PHPMailer(true);
+// Crear una instancia de PHPMailer
+$mail = new PHPMailer(true);
 
     try {
         $mail->SMTPDebug = SMTP::DEBUG_OFF; 
@@ -59,11 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->AltBody = "Tu código de verificación es: $codigo"; 
 
         $mail->send();
+        echo 'El código ha sido enviado a tu correo.';
         header("Location: ../codigo.html");
         exit();
+    
     } catch (Exception $e) {
-        echo "El mensaje no pudo ser enviado. Error: {$mail->ErrorInfo}";
+        echo "Error al enviar el mensaje: {$mail->ErrorInfo}";
     }
-} else {
-    echo "Método no permitido.";
-}
+    
+    ?>

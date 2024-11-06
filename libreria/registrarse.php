@@ -11,13 +11,12 @@ if (isset($_POST['email'], $_POST['password'], $_POST['username'])) {
     $verificationCode = rand(100000, 999999);
     
     $db = Database::getInstance();
-    $query = "INSERT INTO usuarios (email, contrasena, nombre, codigo, verificado) 
-              VALUES (:email, :contrasena, :nombre, :codigo, false)";
+    $query = "INSERT INTO usuarios (email, contrasena, nombre) 
+              VALUES (:email, :contrasena, :nombre)";
     $params = [
         ':email' => $email,
         ':contrasena' => $password,
         ':nombre' => $username,
-        ':codigo' => $verificationCode
     ];
 
     try {
