@@ -1,45 +1,15 @@
-const form = document.querySelector('form');
-const passwordInput = document.getElementById('password');
-const confirmPasswordInput = document.getElementById('confirm_password');
+document.querySelector('#form-cambio').addEventListener('submit', function(e) {
+  e.preventDefault(); // Evitar el envío por defecto
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault(); // Evita el envío del formulario por defecto
+  const nuevaContrasena = document.getElementById('nueva-contrasena').value;
+  const confirmarContrasena = document.getElementById('confirmar-contrasena').value;
 
-  const password = passwordInput.value;
-  const confirmPassword = confirmPasswordInput.value;
-
-  // Validación de contraseñas
-  if (password !== confirmPassword) {
-    alert('Las contraseñas no coinciden.');
-    return;
-  }
-
-  // Simulación de cambio de contraseña (reemplazar con tu lógica real)
-  if (changePassword(password)) {
-    alert('Contraseña cambiada con éxito.');
-    window.location.href = 'login.html'; // Reemplaza con la URL de la página de inicio de sesión
+  if (nuevaContrasena !== confirmarContrasena) {
+    // Si las contraseñas no coinciden, mostrar un mensaje
+    document.getElementById('mensaje-cambio').textContent = 'Las contraseñas no coinciden.';
+    document.getElementById('mensaje-cambio').style.color = 'red';
   } else {
-    alert('Error al cambiar la contraseña');
+    // Si las contraseñas coinciden, enviar el formulario
+    this.submit();
   }
-});
-
-function changePassword(password) {
-  // Aquí debes implementar tu lógica para cambiar la contraseña
-  // Por ejemplo, enviar una solicitud al servidor
-  // y actualizar la contraseña en la base de datos
-  console.log('Nueva contraseña:', password);
-  return true; // Puedes devolver true si el cambio de contraseña fue exitoso
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  const form = document.querySelector("form");
-  const passwordInput = document.getElementById("password");
-  const confirmPasswordInput = document.getElementById("confirm_password");
-
-  form.addEventListener("submit", function(event) {
-      if (passwordInput.value !== confirmPasswordInput.value) {
-          event.preventDefault(); // Detener el envío del formulario
-          alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-      }
-  });
 });
