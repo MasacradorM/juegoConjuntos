@@ -11,13 +11,18 @@
     <div class="container">
         <div class="form-container">
             <h2 class="inicio">Verificar Código</h2>
-            <form id="verificarForm" method="POST" action="libreria/verificarCodigo.php">
+            <form id="formularioVerificacion">
                 <label for="codigo">Codigo de Verificación:</label>
                 <input type="text" id="codigo" name="codigo" required>
+                <input type="hidden" id="email" name="email">
+                
                 <button type="submit">Verificar</button>
             </form>
         </div>
     </div>
+
+    <p class="moverrr" id="modalMessage"></p>
+
     <script src="js/codigo.js"></script>
 </body>
 </html>

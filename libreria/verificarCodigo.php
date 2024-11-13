@@ -1,13 +1,19 @@
 <?php
 session_start();
+header('Content-Type: application/json');
 
-// Verificar si el código enviado en el formulario es correcto
-if ($_POST['codigo'] == $_SESSION['codigo_verificacion']) {
-    // Si es correcto, redirigir al usuario a la página de cambio de contraseña
-    header("Location: ../cambiarContra.html");
-    exit();
+$data = json_decode(file_get_contents('php://input'), true);
+$response = array();
+
+if (isset($data['codigo'])) {
+    if ($data['codigo'] == $_SESSION['codigo_verificacion']) {
+        $response['success'] = true;
+    } else {
+        $response['success'] = false;
+    }
 } else {
-    // Si es incorrecto, mostrar un mensaje de error
-    echo "El código es incorrecto. Por favor, intenta nuevamente.";
+    $response['success'] = false;
 }
+
+echo json_encode($response);
 ?>
