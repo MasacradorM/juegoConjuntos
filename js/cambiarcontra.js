@@ -7,7 +7,7 @@ document.querySelector('#form-cambio').addEventListener('submit', function(e) {
   if (nuevaContrasena !== confirmarContrasena) {
     // Si las contraseñas no coinciden, mostrar un mensaje
     document.getElementById('mensaje-cambio').textContent = 'Las contraseñas no coinciden.';
-    document.getElementById('mensaje-cambio').style.color = 'red';
+    document.getElementById('mensaje-cambio').style.color = 'black';
   } else {
     // Si las contraseñas coinciden, enviar el formulario
     this.submit();
