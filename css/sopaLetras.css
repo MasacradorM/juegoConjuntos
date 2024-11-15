@@ -101,7 +101,7 @@ h1 {
 #word-list li {
     margin: 5px 0;
     padding: 5px 10px; /* Añadido padding para mejor espaciado */
-    color: #ffffff; /* Cambiado para mejor visibilidad sobre fondo marrón */
+    color: #000000; /* Cambiado para mejor visibilidad sobre fondo marrón */
     text-align: center;
 }
 
