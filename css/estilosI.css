@@ -152,7 +152,8 @@ p {
     background-position: center;
     width: 64%;
     height: 10%;
-    margin-left: 16%;
+    margin-left: 0%;
+    margin-top: 8%;
     border: solid #88888800;
 }
 

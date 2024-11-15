@@ -24,7 +24,7 @@ body {
   .text-container {
     position: absolute;
     margin-top: 282px;
-    margin-left: 200px;
+    margin-left: 220px;
     transform: translate(-50%, -50%);
     width:280px; /* Ajusta el ancho del contenedor de texto */
     text-align: center;
@@ -40,7 +40,7 @@ body {
     padding: 15px 30px;
     font-size: 18px;
     margin-top: 480px;
-    margin-left: 110px;
+    margin-left: 130px;
     background-size: contain;
     background-repeat: no-repeat;
     border: solid 3px transparent;

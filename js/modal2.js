@@ -1,7 +1,8 @@
 // Obtener elementos del DOM
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("abrirModal");
-var span = document.getElementsByClassName("close");
+var span = document.getElementsByClassName("close")[0];  // Seleccionar el primer 'close'
+var cerrarSesionBtn = document.querySelector(".cerrar-sesion");
 
 // Abrir el modal al hacer clic en el botón
 btn.onclick = function() {
@@ -18,4 +19,17 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+
+// Función para cerrar la sesión
+cerrarSesionBtn.onclick = function() {
+    // Aquí eliminas la información de la sesión o lo que sea necesario para cerrar sesión
+    // Por ejemplo, si usas localStorage:
+    localStorage.removeItem('user'); // Si guardaste el usuario en localStorage
+    sessionStorage.removeItem('user'); // Si guardaste el usuario en sessionStorage
+    // O si usas cookies, puedes eliminarlas así (dependiendo de cómo estén configuradas):
+    // document.cookie = "nombre_cookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    // Luego, redirige al login
+    window.location.href = "login.html";
 }

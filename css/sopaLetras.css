@@ -8,8 +8,7 @@ body {
     flex-direction: column; /* Cambiado a column para apilar elementos verticalmente */
     align-items: center;
     justify-content: flex-start; /* Cambiado a flex-start para que comience desde arriba */
-    padding-top: 2rem; /* Añadido padding superior para espacio */
-    overflow-x: hidden;
+    overflow: hidden;
     cursor: url('../img/cursor.PNG'), auto;
 }
 
@@ -23,6 +22,7 @@ h1 {
     width: 30%;
     background-size: cover;
     background-position: center;
+    margin-right: 220px;
 }
 
 .container {
@@ -44,6 +44,7 @@ h1 {
     border: 3px solid #8b4513;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
+    margin-right: 220px;
 }
 
 .cell {
@@ -76,19 +77,19 @@ h1 {
     background-image: url("../img/pergamino.PNG");
     background-size: cover;
     background-position: center;
-    max-width: 30%
+    max-width: 30%;
     margin-left: 5%;
     padding: 1rem; /* Añadido padding para mejor espaciado */
     border-radius: 8px; /* Añadido para consistencia con el diseño */
     margin-left: 70%;
-    margin-top: -38%;
+    margin-top: -35%;
 }
 
 #words h2 {
     font-size: 1.5em;
     color: #000000;
     text-align: center;
-    margin-bottom: 1rem; /* Añadido espacio después del título */
+    margin-bottom: 1rem;
 }
 
 #word-list {

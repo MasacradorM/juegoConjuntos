@@ -66,15 +66,15 @@ body {
   color: white;
   font-size: 40px;
   position: absolute;
-  margin-top: -540px;
+  margin-top: -500px;
   font-family: 'Kaushan Script';
 }
 .titulo2{
   color: white;
   font-size: 40px;
   position: absolute;
-  margin-top: -540px;
-  margin-left: 930px;
+  margin-top: -500px;
+  margin-left: 900px;
   font-family: 'Kaushan Script';
 }
 .titulo3{
@@ -82,8 +82,8 @@ body {
   color: white;
   font-size: 36px;
   position: absolute;
-  margin-top: -540px;
-  margin-left: -930px;
+  margin-top: -500px;
+  margin-left: -890px;
   font-family: 'Kaushan Script';
 }
 

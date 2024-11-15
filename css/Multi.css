@@ -30,7 +30,7 @@ body {
     background-size: cover;
     background-position: center;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
@@ -47,7 +47,7 @@ body {
     background-size: cover;
     background-position: center;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
