@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruleta de Premios</title>
+   <link rel="stylesheet" href="css/ruleta.css">
+</head>
+<body>
+      <div id="temporizadorPregunta"></div>
+      <div id="timer" class="timer">01:00</div> <!-- Contador de 5 minutos -->
+  <!-- Modal para mostrar la pregunta -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h2 >Pregunta</h2>
+        <p>Pregunta dinámica</p>
+        <form id="quizForm">
+            <input type="radio" name="answer" value="a" id="a">
+            <label for="a" id="label-a">Opción A</label><br>
+            <input type="radio" name="answer" value="b" id="b">
+            <label for="b" id="label-b">Opción B</label><br>
+            <input type="radio" name="answer" value="c" id="c">
+            <label for="c" id="label-c">Opción C</label><br>
+            <input type="radio" name="answer" value="d" id="d">
+            <label for="d" id="label-d">Opción D</label><br>
+            <br>
+            <button type="button" onclick="checkAnswer()">Enviar Respuesta</button>
+        </form>
+    </div>
+  </div>
+
+  <!-- Ruleta -->
+  <div class="ruleta-container">
+    <div class="puntero"></div>
+    <div id="ruleta" class="ruleta">
+      <div class="seccion seccion-1"></div>
+      <div class="seccion seccion-2"></div>
+      <div class="seccion seccion-3"></div>
+      <div class="seccion seccion-4"></div>
+    </div>
+  </div>
+
+  <!-- Botón de girar -->
+  <button class="boton" id="btnGirar" onclick="girarRuleta()"><p class="girar">Girar</p></button>
+
+  <script src="js/ruleta.js"></script>
+
+  </body>
+</html>
