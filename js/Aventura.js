@@ -20,7 +20,7 @@ function changeText() {
     // Redirigir a la página "mapa.html" después de un retraso de 10 segundos
     setTimeout(() => {
       window.location.href = 'mapa.html';
-    }, 5000); // Esperar 10 segundos antes de redirigir
+    }, 2000); // Esperar 10 segundos antes de redirigir
   }
 }
 

@@ -1,5 +1,5 @@
 body {
-    background-image: url('../img/fondoaventura.png');
+    background-image: url('../img/aventura.jpeg');
     background-size: cover;
     background-position: center;
     height: 110vh;
@@ -8,7 +8,6 @@ body {
     align-items: center; 
     overflow: hidden;
     font-family: 'Kaushan Script', cursive;
-    cursor: url('../img/cursor.PNG'), auto;
   }
   img{
     width: 500px;
@@ -18,14 +17,20 @@ body {
   }
   .letra{
     position: absolute;
-    margin-top: 320px;
-    margin-left: 520px;
+    margin-top: 240px;
+    margin-left: 420px;
     transform: translate(-50%, -50%);
-    width:280px; /* Ajusta el ancho del contenedor de texto */
+    width:280px;
     text-align: center;
     color: black;
-    font-size: 36px;
+    font-size: 20px;
     padding: 20px;
     border-radius: 10px;
-    text-align: left;
+    text-align: center;
+  }
+
+  .moverr{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 80px;
   }
