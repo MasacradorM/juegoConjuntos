@@ -1,7 +1,6 @@
 // Obtener elementos del DOM
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("abrirModal");
-var span = document.getElementsByClassName("close")[0];  // Seleccionar el primer 'close'
 var cerrarSesionBtn = document.querySelector(".cerrar-sesion");
 
 // Abrir el modal al hacer clic en el botón

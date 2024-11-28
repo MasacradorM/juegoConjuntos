@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Juego Pirata</title>
-    <!--icono-->
     <link rel="icon" href="img/icono.icon">
-    <!--Tipo de letra-->
     <link href='https://fonts.googleapis.com/css?family=Irish Grover' rel='stylesheet'>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/estilosI.css">
 </head>
 <body>
@@ -18,20 +14,19 @@
 
     <div id="myModal" class="modal">
         <div class="modal-content1">
-            <span class="close">&times;</span>
+            <span class="close">&times;</span><br>
             <div class="perfilUser"></div>
-            <h6>Jack</h6>
-
-            <h6>Nombre- Angel123405</h6>
-
-            <h6>Correo-angelrl@gmail.com</h6>
+            <div id="nombre">Nombre: </div>
+            <br>
+            <br>
+            <h6 id="correoo"></h6>
 
             <h6>Nivel: 3</h6>
             <div class="barraNivel">
                 <div class="avance"></div>
             </div>
             <br>
-            <button class="cerrar-sesion">Cerrar Sesion</button>
+            <button id="cerrar" class="cerrar-sesion">Cerrar Sesion</button>
         </div>
     </div>
 
@@ -263,6 +258,7 @@
         </div>
     </div>
 
+    <script src="js/inicio.js"></script>
     <script src="js/modal2.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/Modales.js"></script>

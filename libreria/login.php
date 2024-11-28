@@ -17,17 +17,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $db = Database::getInstance()->getConnection();
         $stmt = $db->prepare("SELECT * FROM usuarios WHERE email = :email");
-        $stmt->bindParam(':email', $loginUsuario);
+        $stmt->bindParam(':email', $loginUsuario, );
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if (password_verify($contrasena, $user['contrasena'])) {
-                $_SESSION['usuarioId'] = $user['usuariosId'];
+                $_SESSION['usuarioId'] = $user['usuariosid'];
                 $_SESSION['nombre'] = $user['nombre'];
                 ob_end_clean();
-                echo json_encode(['success' => true]);
+                echo json_encode(['success' => true,
+                'email' => $loginUsuario,
+                'nombre' => $user['nombre'],  // El nombre del usuario es enviado en la respuesta
+                'usuarioId' => $user['usuariosid'],  // El nombre del usuario es enviado en la respuesta
+            ]);
             } else {
                 ob_end_clean();
                 echo json_encode(['success' => false, 'message' => 'Usuario o contraseña incorrectos.']);
