@@ -1,9 +1,9 @@
 <?php
-
 session_start();
 session_unset();
 session_destroy();
 
-header('location: login.html');
+// Respuesta JSON indicando éxito
+echo json_encode(['status' => 'success']);
 exit;
 ?>

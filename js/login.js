@@ -23,10 +23,11 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
             localStorage.setItem('nombre', result.nombre);
             localStorage.setItem('usuariosId', result.usuarioId);
             localStorage.setItem('email', result.email)
+            localStorage.setItem('avatar', result.avatar_url)
         } else {
             showModal();
         }
-    } catch (error) {
+    } catch (error) {   
         console.error('Error en la solicitud:', error);
     }
 });
