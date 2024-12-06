@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Conjuntos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            background-color: #f4f4f4;
+        }
+        .game-container {
+            text-align: center;
+            border: 1px solid #000;
+            padding: 20px;
+            background-color: #fff;
+        }
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .message {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h2>Juego de Conjuntos</h2>
+        <p>Responde las siguientes operaciones de conjuntos:</p>
+
+        <!-- Conjuntos de ejemplo -->
+        <p><strong>Conjunto A</strong> = {1, 2, 3, 4, 5}</p>
+        <p><strong>Conjunto B</strong> = {4, 5, 6, 7}</p>
+
+        <p><strong>¿Cuál es A ∪ B (Unión de A y B)?</strong></p>
+        <input type="text" id="union" placeholder="Respuesta...">
+        <button onclick="checkUnion()">Verificar</button>
+
+        <p><strong>¿Cuál es A ∩ B (Intersección de A y B)?</strong></p>
+        <input type="text" id="intersection" placeholder="Respuesta...">
+        <button onclick="checkIntersection()">Verificar</button>
+
+        <p><strong>¿Cuál es A - B (Diferencia de A y B)?</strong></p>
+        <input type="text" id="difference" placeholder="Respuesta...">
+        <button onclick="checkDifference()">Verificar</button>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        // Respuestas correctas
+        const correctUnion = "{1, 2, 3, 4, 5, 6, 7}";
+        const correctIntersection = "{4, 5}";
+        const correctDifference = "{1, 2, 3}";
+
+        // Función para verificar la respuesta de la unión
+        function checkUnion() {
+            const userAnswer = document.getElementById("union").value.toUpperCase().trim();
+            const message = document.getElementById("message");
+            if (userAnswer === correctUnion) {
+                message.textContent = "¡Correcto!";
+                message.classList.add("correct");
+                message.classList.remove("incorrect");
+            } else {
+                message.textContent = "Incorrecto. La respuesta correcta es " + correctUnion;
+                message.classList.add("incorrect");
+                message.classList.remove("correct");
+            }
+        }
+
+        // Función para verificar la respuesta de la intersección
+        function checkIntersection() {
+            const userAnswer = document.getElementById("intersection").value.toUpperCase().trim();
+            const message = document.getElementById("message");
+            if (userAnswer === correctIntersection) {
+                message.textContent = "¡Correcto!";
+                message.classList.add("correct");
+                message.classList.remove("incorrect");
+            } else {
+                message.textContent = "Incorrecto. La respuesta correcta es " + correctIntersection;
+                message.classList.add("incorrect");
+                message.classList.remove("correct");
+            }
+        }
+
+        // Función para verificar la respuesta de la diferencia
+        function checkDifference() {
+            const userAnswer = document.getElementById("difference").value.toUpperCase().trim();
+            const message = document.getElementById("message");
+            if (userAnswer === correctDifference) {
+                message.textContent = "¡Correcto!";
+                message.classList.add("correct");
+                message.classList.remove("incorrect");
+            } else {
+                message.textContent = "Incorrecto. La respuesta correcta es " + correctDifference;
+                message.classList.add("incorrect");
+                message.classList.remove("correct");
+            }
+        }
+    </script>
+
+</body>
+</html>

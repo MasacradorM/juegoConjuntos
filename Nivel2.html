@@ -26,8 +26,8 @@
     </div>
     
 
-    <button class="habilidad" onclick="openModal(1)">Golpe simple</button>
-    <button class="habilidad1" onclick="openModal(2)">Golpe de poder</button>
+    <button class="habilidad" onclick="openModal('simpleAttack')">Golpe simple</button>
+    <button class="habilidad1" onclick="openModal('powerAttack')">Golpe de poder</button>
 
     <!-- Modal de pregunta -->
     <div id="myModal" class="modal">
@@ -74,7 +74,56 @@
             </div>
         </div>
     </div>
-    
+    <div id="victoryModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>¡Felicidades! Has derrotado al Jefe</h2>
+            <p>Has derrotado al jefe. ¡Avanza al siguiente nivel!</p>
+            <button id="nextLevelButton">Avanzar al siguiente nivel</button>
+        </div>
+    </div>
+    <div id="gameOverModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>¡Fin del juego!</h2>
+            <p>Todos los piratas han sido derrotados.</p>
+            <button id="retryButton">Reintentar</button>
+            <button id="backToMapButton">Volver al Mapa</button>
+        </div>
+    </div>
+
+       <!-- Botón para abrir el modal -->
+       
+
+       <button class="btn" id="myBtn">pistas</button>
+
+       <!-- El Modal -->
+       <div id="preguntas" class="modalp">
+   
+           <!-- Contenido del Modal -->
+           <div class="modal-contentp">
+               <span class="close">&times;</span>
+               <h2>Conceptos Importantes de Teoría de Conjuntos</h2>
+               <div class="concepts">
+                   <h3>1. Unión (A ∪ B)</h3>
+                   <p>La unión de dos conjuntos A y B es el conjunto de todos los elementos que pertenecen a A, a B o a ambos.</p>
+   
+                   <h3>2. Intersección (A ∩ B)</h3>
+                   <p>La intersección de dos conjuntos A y B es el conjunto de todos los elementos que pertenecen tanto a A como a B.</p>
+   
+                   <h3>3. Diferencia (A - B)</h3>
+                   <p>La diferencia de dos conjuntos A y B es el conjunto de todos los elementos que pertenecen a A pero no a B.</p>
+   
+                   <h3>4. Diferencia Simétrica (A ∆ B)</h3>
+                   <p>La diferencia simétrica de dos conjuntos A y B es el conjunto de todos los elementos que están en A o en B, pero no en ambos.</p>
+   
+                   <h3>5. Subconjunto (A ⊆ B)</h3>
+                   <p>A es un subconjunto de B si todos los elementos de A están también en B.</p>
+   
+                   <h3>6. Conjunto Complementario</h3>
+                   <p>El complemento de un conjunto A respecto a un universo U es el conjunto de todos los elementos de U que no están en A.</p>
+               </div>
+           </div>
+   
+       </div>
     <script src="js/nivel2.js"></script>
     <script src="js/GanasoPierdes.js"></script>
 
