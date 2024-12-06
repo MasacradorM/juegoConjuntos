@@ -20,7 +20,7 @@ function activateGif(element, gifUrl, redirectUrl) {
   
   puerta2.addEventListener('click', function(event) {
     event.preventDefault(); // Evita que el enlace navegue inmediatamente
-    activateGif(puerta2, 'gif/abrete.gif', 'letrero.html'); // Activa el GIF y redirige
+    activateGif(puerta2, 'gif/abrete.gif', 'crucigrama.html'); // Activa el GIF y redirige
   });
   
   puerta3.addEventListener('click', function(event) {

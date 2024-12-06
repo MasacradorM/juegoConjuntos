@@ -37,3 +37,4 @@ function cerrarSesion() {
 
 // Agregar el evento al botón
 document.getElementById('cerrar').addEventListener('click', cerrarSesion);
+

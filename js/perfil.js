@@ -17,3 +17,13 @@ document.getElementById('abrirModal').addEventListener('click', function () {
         console.error('Error en la petición:', error);
     });
 });
+document.querySelector(".close-btn").addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Cierra el modal si haces clic fuera del contenido del modal
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});

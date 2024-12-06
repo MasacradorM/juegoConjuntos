@@ -41,6 +41,8 @@ body {
 }
 .imagen{
     margin-top: -39%;
+    width: 100px;
+    height: 100px;
 }
 .alegar{
     margin-left: 20px;
@@ -400,12 +402,16 @@ p {
     max-width: 600px;
     background-color: transparent;
     border: 1px solid transparent;
-    color: #fff;
+    color: #000000;
     margin-top: 2%;
     max-width: 1000px;
     overflow: hidden; 
     align-items: center;
     height: 90%;
+}
+
+.colorrrrr{
+        color: #ffffff;
 }
 
 .store-grid {
